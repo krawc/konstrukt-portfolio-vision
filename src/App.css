@@ -40,3 +40,9 @@
 .read-the-docs {
   color: #888;
 }
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-\[marquee_120s_linear_infinite\] {
+    animation: none !important;
+  }
+}

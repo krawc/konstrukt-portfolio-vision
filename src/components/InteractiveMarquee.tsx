@@ -108,6 +108,7 @@ const InteractiveMarquee = ({ content }: InteractiveMarqueeProps) => {
       <div className="relative">
         <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row items-start sm:items-end gap-2 sm:gap-4">
           <input
+            aria-label="Your message about the future"
             ref={inputRef}
             type="text"
             value={inputValue}
@@ -134,10 +135,19 @@ const InteractiveMarquee = ({ content }: InteractiveMarqueeProps) => {
 
   return (
     <span 
-      className="relative inline-block cursor-pointer"
+      role="button"
+      tabIndex={0}
+      aria-label="Click to respond to the prompt: the future is blank"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       onClick={handleClick}
+      onKeyDown={(e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          handleClick();
+        }
+      }}
+      className="relative inline-block cursor-pointer"
     >
       <span className={`transition-opacity duration-300 border-b-[6px] sm:border-b-[8px] md:border-b-[12px] border-black text-transparent`}>
         _____
@@ -150,7 +160,7 @@ const InteractiveMarquee = ({ content }: InteractiveMarqueeProps) => {
       </span>
 
       {/* Interactive cursor indicator - moved to bottom right with hand pointer style */}
-      <ArrowUpLeft className="absolute" style={{ right: '-25px', bottom: '-40px' }} />
+      <ArrowUpLeft   aria-hidden="true" className="absolute" style={{ right: '-25px', bottom: '-40px' }} />
     </span>
   );
 };
