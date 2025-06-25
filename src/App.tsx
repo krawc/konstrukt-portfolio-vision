@@ -52,8 +52,8 @@ export const projectsRaw = [
   {
     "id": 12,
     "title": "eureka",
-    "description": "Spring 2024. Vision in Product Project at TU Delft. This project explores innovative approaches to international train travel by addressing current preconceptions and leveraging modern lifestyle shifts. Central to the project is a travel planning tool designed to enhance the quality of door-to-door travel. This tool provides users with a quality-oriented view of their journey, highlighting not just logistics but also cognitive aspects of their travel time. By visualizing occupied, idle, and free time, and incorporating information on amenities and multimodal connections, the tool encourages process-oriented choices, nudging users toward sustainable ground transit options.",
-    "description_html": "Spring 2024. Vision in Product Project at TU Delft. This project explores innovative approaches to international train travel by addressing current preconceptions and leveraging modern lifestyle shifts. Central to the project is a travel planning tool designed to enhance the quality of door-to-door travel. This tool provides users with a quality-oriented view of their journey, highlighting not just logistics but also cognitive aspects of their travel time. By visualizing occupied, idle, and free time, and incorporating information on amenities and multimodal connections, the tool encourages process-oriented choices, nudging users toward sustainable ground transit options. <br/> <br/> <h1>View case study here:</h1> <br/> <iframe src='https://nbujwalvdcjefepwnyky.supabase.co/storage/v1/object/public/assets/docs/vip_slides3.pdf' width='100%' height='500'></iframe> ",
+    "description": "This project explores innovative approaches to international train travel by addressing current preconceptions and leveraging modern lifestyle shifts. Central to the project is a travel planning tool designed to enhance the quality of door-to-door travel. This tool provides users with a quality-oriented view of their journey, highlighting not just logistics but also cognitive aspects of their travel time. By visualizing occupied, idle, and free time, and incorporating information on amenities and multimodal connections, the tool encourages process-oriented choices, nudging users toward sustainable ground transit options.",
+    "description_html": "This project explores innovative approaches to international train travel by addressing current preconceptions and leveraging modern lifestyle shifts. Central to the project is a travel planning tool designed to enhance the quality of door-to-door travel. This tool provides users with a quality-oriented view of their journey, highlighting not just logistics but also cognitive aspects of their travel time. By visualizing occupied, idle, and free time, and incorporating information on amenities and multimodal connections, the tool encourages process-oriented choices, nudging users toward sustainable ground transit options. <br/> <br/> <h1>View case study here:</h1> <br/> <iframe src='https://nbujwalvdcjefepwnyky.supabase.co/storage/v1/object/public/assets/docs/vip_slides3.pdf' width='100%' height='500'></iframe> ",
     "type": "play",
     "year": "2024",
     "images": [
@@ -64,7 +64,7 @@ export const projectsRaw = [
   {
     "id": 2,
     "title": "bits & pieces",
-    "description": "Fall 2022. Exploring Interactions Project at TU Delft. This product was developed to help visitors of Kunstmuseum Den Haag find meaning in abstract art. It consists of cue cards, packaged in a stylish paper box with a black ribbon handle, designed to guide users through the phases 'See,' 'Think,' and 'Feel' to deepen their understanding of artwork. The cards are made from durable materials and feature a minimalistic, abstract aesthetic.",
+    "description": "This product was developed to help visitors of Kunstmuseum Den Haag find meaning in abstract art. It consists of cue cards, packaged in a stylish paper box with a black ribbon handle, designed to guide users through the phases 'See,' 'Think,' and 'Feel' to deepen their understanding of artwork. The cards are made from durable materials and feature a minimalistic, abstract aesthetic.",
     "type": "play",
     "year": "2022",
     "images": [
@@ -76,7 +76,7 @@ export const projectsRaw = [
   {
     "id": 3,
     "title": "Picnic Re-design",
-    "description": "Spring 2023. User eXperience Assessment in Design at TU Delft. This group project for Picnic, an online grocery shopping service, aimed to enhance app features for greater user control and flexibility. Catering to identified personas 'Manager' and 'Chef,' the redesign improved product search, cart categorization, and dietary preference personalization. User tests showed significant success with a 7/10 target achievement.",
+    "description": "This group project for Picnic, an online grocery shopping service, aimed to enhance app features for greater user control and flexibility. Catering to identified personas 'Manager' and 'Chef,' the redesign improved product search, cart categorization, and dietary preference personalization. User tests showed significant success with a 7/10 target achievement.",
     "type": "work",
     "year": "2023",
     "images": [
@@ -87,7 +87,7 @@ export const projectsRaw = [
   {
     "id": 4,
     "title": "artmo",
-    "description": "2018 - now. Industry Project. Shanghai - Lisbon - Remote. ARTMO is a social platform for art promotion, curation, and sales, currently with 150,000+ users. Its commission-free approach challenges traditional art sales models while providing marketing tools for established institutions and empowering independent artists and buyers worldwide. As a co-founder and product lead, I managed user research, UI prototypes, front-end development, and project management.",
+    "description": "ARTMO is a social platform for art promotion, curation, and sales, currently with 150,000+ users. Its commission-free approach challenges traditional art sales models while providing marketing tools for established institutions and empowering independent artists and buyers worldwide. As a co-founder and product lead, I managed user research, UI prototypes, front-end development, and project management.",
     "type": "work",
     "year": "2018",
     "images": [
@@ -98,7 +98,7 @@ export const projectsRaw = [
   {
     "id": 5,
     "title": "LiveRoom",
-    "description": "2020 - 2021. Industry Project. Remote. LiveRoom Media addresses the lack of online monetization and networking opportunities in the music industry post-COVID-19. It offers a platform for musicians to monetize performances, network, and upskill. As technical lead, I supported these initiatives through targeted solutions.",
+    "description": "LiveRoom Media addresses the lack of online monetization and networking opportunities in the music industry post-COVID-19. It offers a platform for musicians to monetize performances, network, and upskill. As technical lead, I supported these initiatives through targeted solutions.",
     "type": "work",
     "year": "2020",
     "images": [
@@ -109,7 +109,7 @@ export const projectsRaw = [
   {
     "id": 6,
     "title": "iLiveInPublic",
-    "description": "Fall 2019. Interactive Media Arts thesis at NYU Shanghai, supervised by Allison de Fren. This project explores the concept of the 'digital panopticon' through an 8-hour performance experiment where every interaction with the web was recorded and transformed into algorithm-feeding data. It was later presented at a conference at the China Academy of Art in December 2021.",
+    "description": "This project explores the concept of the 'digital panopticon' through an 8-hour performance experiment where every interaction with the web was recorded and transformed into algorithm-feeding data. It was later presented at a conference at the China Academy of Art in December 2021.",
     "type": "play",
     "year": "2019",
     "images": [
@@ -120,7 +120,7 @@ export const projectsRaw = [
   {
     "id": 7,
     "title": "BossySuits",
-    "description": "Fall 2018. This project focused on creating a subscription-based professional apparel brand for millennials. As part of a team, I developed a JavaScript-based e-commerce extension to automate unique package generation based on customer data. The entire order-to-package generation process was reduced to two clicks.",
+    "description": "This project focused on creating a subscription-based professional apparel brand for millennials. As part of a team, I developed a JavaScript-based e-commerce extension to automate unique package generation based on customer data. The entire order-to-package generation process was reduced to two clicks.",
     "type": "work",
     "year": "2018",
     "images": [
@@ -131,7 +131,7 @@ export const projectsRaw = [
   {
     "id": 8,
     "title": "inklined",
-    "description": "Fall 2018. A generative art project paying tribute to Franz Kline's abstract expressionism. Using p5.js, I created functions that leveraged randomization and Perlin noise to produce calligraphic, abstract visuals. One of the pieces, inklined #1, was sold as an NFT on mintable.app.",
+    "description": "A generative art project paying tribute to Franz Kline's abstract expressionism. Using p5.js, I created functions that leveraged randomization and Perlin noise to produce calligraphic, abstract visuals. One of the pieces, inklined #1, was sold as an NFT on mintable.app.",
     "type": "play",
     "year": "2018",
     "images": [
@@ -142,7 +142,7 @@ export const projectsRaw = [
   {
     "id": 9,
     "title": "Center for AI and Culture",
-    "description": "2021. A freelance project involving the creation of a prototype website for The Center for AI and Culture at NYU Shanghai. This platform serves as a hub for designers, engineers, and theorists to explore AI developments. Additionally, it acts as a content management system for faculty essays. The project was co-founded by Prof. Benjamin Bratton.",
+    "description": "A freelance project involving the creation of a prototype website for The Center for AI and Culture at NYU Shanghai. This platform serves as a hub for designers, engineers, and theorists to explore AI developments. Additionally, it acts as a content management system for faculty essays. The project was co-founded by Prof. Benjamin Bratton.",
     "type": "work",
     "year": "2021",
     "images": [
