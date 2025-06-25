@@ -63,7 +63,7 @@ const Index = () => {
               onMouseEnter={() => setIsHovered(true)}
               onMouseLeave={() => setIsHovered(false)}
             >
-              <span className={`transition-opacity duration-300 border-b-[15px] border-black text-transparent`}>
+              <span className={`transition-opacity duration-300 border-b-[8px] sm:border-b-[12px] border-black text-transparent`}>
                 _____
               </span>
               
