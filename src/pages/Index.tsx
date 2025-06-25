@@ -2,9 +2,9 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Mail, ExternalLink, Github, Linkedin, Phone } from "lucide-react";
 import { projectsRaw } from "../App";
+import InteractiveMarquee from "../components/InteractiveMarquee";
 
 const Index = () => {
-  const [isHovered, setIsHovered] = useState(false);
   const [selectedTag, setSelectedTag] = useState<string | null>(null);
   
   const caseStudies = projectsRaw.slice(0, 2);
@@ -58,21 +58,7 @@ const Index = () => {
         <div className="mb-16">
           <h1 className="text-6xl md:text-8xl font-mono font-bold text-black leading-tight">
             the future is{" "}
-            <span 
-              className="relative inline-block"
-              onMouseEnter={() => setIsHovered(true)}
-              onMouseLeave={() => setIsHovered(false)}
-            >
-              <span className={`transition-opacity duration-300 border-b-[8px] sm:border-b-[12px] border-black text-transparent`}>
-                _____
-              </span>
-              
-                <span className="absolute inset-0 overflow-hidden whitespace-nowrap">
-                  <span className="inline-block animate-[marquee_120s_linear_infinite]">
-                    {marqueeContent.join(" • ")} • {marqueeContent.join(" • ")} • 
-                  </span>
-                </span>
-            </span>
+            <InteractiveMarquee content={marqueeContent} />
           </h1>
         </div>
 
