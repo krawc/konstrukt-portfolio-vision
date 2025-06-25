@@ -107,8 +107,7 @@ const InteractiveMarquee = ({ content }: InteractiveMarqueeProps) => {
         </span>
       </span>
 
-      {/* Interactive cursor indicator - moved to bottom right with hand pointer style */}
-      <span className="absolute -bottom-2 -right-2 w-3 h-3 bg-black rounded-sm rotate-12 animate-pulse cursor-pointer"></span>
+      {/* Interactive cursor indicator */}
     </span>
   );
 };
