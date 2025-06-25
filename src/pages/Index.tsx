@@ -18,7 +18,7 @@ const Index = () => {
     ? otherProjects.filter(project => project.type === selectedTag)
     : otherProjects;
 
-  const marqueeContent = ["collaborative", "sustainable", "accessible", "intuitive", "human-centered"];
+  const marqueeContent = ["multimodal", "collaborative", "material", "more-than-human", "conversational", "interdepedent"];
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-100 via-gray-50 to-white">
@@ -44,7 +44,7 @@ const Index = () => {
             <Linkedin size={20} />
           </a>
           <a 
-            href="tel:999999999" 
+            href="tel:+48453283345" 
             className="p-2 text-gray-700 hover:text-black transition-colors"
             aria-label="Phone"
           >
@@ -68,7 +68,7 @@ const Index = () => {
               </span>
               
                 <span className="absolute inset-0 overflow-hidden whitespace-nowrap">
-                  <span className="inline-block animate-[marquee_60s_linear_infinite]">
+                  <span className="inline-block animate-[marquee_120s_linear_infinite]">
                     {marqueeContent.join(" • ")} • {marqueeContent.join(" • ")} • 
                   </span>
                 </span>
@@ -79,7 +79,7 @@ const Index = () => {
         {/* Introduction */}
         <div className="mb-12">
           <p className="text-xl font-sans text-gray-800 leading-relaxed max-w-3xl mb-8">
-            I'm Konrad Krawczyk. I'm a UX engineer who designs, develops and studies multimodal interfaces. With 6+ years of experience in technical roles as well as a trained eye for user-centered design, I combine skills in data, development and design to create novel ways of interacting with digital products.
+            I'm Konrad Krawczyk. I'm a UI engineer who designs, develops and studies multimodal interfaces. With 6+ years of experience in technical roles as well as training in user research, I combine skills in data, development and design to create novel ways of interacting with digital products.
           </p>
 
           {/* Contact buttons */}
@@ -92,7 +92,8 @@ const Index = () => {
               get in touch
             </a>
             <a 
-              href="#" 
+              href="https://nbujwalvdcjefepwnyky.supabase.co/storage/v1/object/public/assets/docs/KK_resume_portfolio.pdf"
+              target="_blank"
               className="inline-flex items-center gap-2 px-6 py-3 border border-black text-black font-mono text-sm hover:bg-black hover:text-white transition-colors rounded-lg"
             >
               <ExternalLink size={16} />
@@ -204,7 +205,9 @@ const Index = () => {
 
       {/* Footer */}
       <footer className="px-8 py-12 max-w-6xl mx-auto border-t border-gray-200 mt-20">
-        <p className="text-gray-500 font-mono text-sm">© 2024 Konrad</p>
+        <p className="text-gray-500 font-mono text-sm">
+          © {new Date().getFullYear()} Konrad Krawczyk
+        </p>
       </footer>
     </div>
   );

@@ -14,7 +14,9 @@ export const projectsRaw = [
   {
     "id": 1,
     "title": "BMW AG",
+    
     "description": "During my internship at BMW's in-car voice assistant team, I supported the integration of large language models into automotive UX. My work helped define the assistant's interaction style by contributing to the development of a fine-tuning dataset and prompt design. A feedback platform I co-developed enabled compliant, large-scale collection of user preferences around verbosity. Insights from user studies shaped key design decisions and contributed directly to team-wide strategy updates. I also helped improve onboarding UX in the demo app, making the assistant easier to showcase to internal and external stakeholders.",
+    "description_html": 'During my internship at BMW\'s in-car voice assistant team, I supported the integration of large language models into automotive UX. My work helped define the assistant\'s interaction style by contributing to the development of a fine-tuning dataset and prompt design. A feedback platform I co-developed enabled compliant, large-scale collection of user preferences around verbosity. Insights from user studies shaped key design decisions and contributed directly to team-wide strategy updates. I also helped improve onboarding UX in the demo app, making the assistant easier to showcase to internal and external stakeholders.<br/><br/> <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://embed.figma.com/deck/444PWwPIrL52rwRWtWgrnO/LLM-Human-Feedback-Strategy---case-study?node-id=1-352&viewport=-100%2C-80%2C0.48&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&embed-host=share" allowfullscreen></iframe> <br/><br/> <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://embed.figma.com/proto/iJS5uppZ4LN6aYKB1cheev/Chat-BMW-island?page-id=10%3A16&node-id=13-1621&starting-point-node-id=13%3A1621&scaling=scale-down-width&content-scaling=fixed&show-proto-sidebar=0&embed-host=share" allowfullscreen></iframe>',
     "type": "work",
     "year": "2025",
     "links": [
@@ -51,11 +53,12 @@ export const projectsRaw = [
     "id": 12,
     "title": "eureka",
     "description": "Spring 2024. Vision in Product Project at TU Delft. This project explores innovative approaches to international train travel by addressing current preconceptions and leveraging modern lifestyle shifts. Central to the project is a travel planning tool designed to enhance the quality of door-to-door travel. This tool provides users with a quality-oriented view of their journey, highlighting not just logistics but also cognitive aspects of their travel time. By visualizing occupied, idle, and free time, and incorporating information on amenities and multimodal connections, the tool encourages process-oriented choices, nudging users toward sustainable ground transit options.",
+    "description_html": "Spring 2024. Vision in Product Project at TU Delft. This project explores innovative approaches to international train travel by addressing current preconceptions and leveraging modern lifestyle shifts. Central to the project is a travel planning tool designed to enhance the quality of door-to-door travel. This tool provides users with a quality-oriented view of their journey, highlighting not just logistics but also cognitive aspects of their travel time. By visualizing occupied, idle, and free time, and incorporating information on amenities and multimodal connections, the tool encourages process-oriented choices, nudging users toward sustainable ground transit options. <br/> <br/> <h1>View case study here:</h1> <br/> <iframe src='https://nbujwalvdcjefepwnyky.supabase.co/storage/v1/object/public/assets/docs/vip_slides3.pdf' width='100%' height='500'></iframe> ",
     "type": "play",
     "year": "2024",
     "images": [
-      "https://www.dropbox.com/scl/fi/npohqglkipvtw8s5oiujy/eureka.png?rlkey=sblx14yhiiovl5uuwcodfx70r&st=bqftda0o&raw=1",
-      "https://www.dropbox.com/scl/fi/vkmx0ve5gmj2t5ftqrzzd/eureka2.png?rlkey=z0ctbsequpcbrk2k6xdmif4ui&st=ef3wl8z9&raw=1"
+      "https://nbujwalvdcjefepwnyky.supabase.co/storage/v1/object/public/assets/images/eureka1.jpg",
+      "https://nbujwalvdcjefepwnyky.supabase.co/storage/v1/object/public/assets/images/eureka2.jpg"
     ]
   },
   {
@@ -65,8 +68,8 @@ export const projectsRaw = [
     "type": "play",
     "year": "2022",
     "images": [
-      "https://www.dropbox.com/scl/fi/lgx20g2ha68nkrdo8i76e/bits1.png?rlkey=obt0xt8h4gxift6y19dwual5h&st=23urr9td&raw=1",
-      "https://www.dropbox.com/scl/fi/elcbtsrspl9xhv0utqxvp/bits2.png?rlkey=u7cv6zvltztdxie7j2zuk02kv&st=q5rtfmmy&raw=1",
+      "https://nbujwalvdcjefepwnyky.supabase.co/storage/v1/object/public/assets/images/bits1.jpg",
+      "https://nbujwalvdcjefepwnyky.supabase.co/storage/v1/object/public/assets/images/bits2.jpg",
       "https://www.dropbox.com/scl/fi/wb378yvi3djhn6f418lg9/bits3.png?rlkey=ptqju1gcwqyffv9ngzoletjwm&st=bfoddkyp&raw=1"
     ]
   },
@@ -77,8 +80,8 @@ export const projectsRaw = [
     "type": "work",
     "year": "2023",
     "images": [
-      "https://www.dropbox.com/scl/fi/0siwop20yzufva69j7xod/picnic.png?rlkey=iasezr6pknom0s9vg1ai1grnv&st=inkmfx9q&raw=1",
-      "https://www.dropbox.com/scl/fi/0siwop20yzufva69j7xod/picnic.png?rlkey=iasezr6pknom0s9vg1ai1grnv&st=inkmfx9q&raw=1"
+      "https://nbujwalvdcjefepwnyky.supabase.co/storage/v1/object/public/assets/images/picnic1.jpg",
+      "https://nbujwalvdcjefepwnyky.supabase.co/storage/v1/object/public/assets/images/picnic2.jpg"
     ]
   },
   {
