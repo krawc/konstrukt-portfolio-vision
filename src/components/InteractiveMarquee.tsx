@@ -1,7 +1,6 @@
 
 import { useState, useRef, useEffect } from "react";
 import { supabase } from "@/integrations/supabase/client";
-import { ArrowUpLeft } from "lucide-react";
 
 interface InteractiveMarqueeProps {
   content: string[];
@@ -33,7 +32,49 @@ const InteractiveMarquee = ({ content }: InteractiveMarqueeProps) => {
         console.error('Error sending email:', error);
         alert('Failed to send message. Please try again.');
       } else {
-        alert('Thanks for your response! Message sent successfully.');
+        // Ask if they want to provide contact info
+        const wantsToProvideContact = confirm('Thanks for your response! Would you like to share your email or GitHub handle so I can get in touch? (This is completely optional)');
+        
+        if (wantsToProvideContact) {
+          const contactInfo = prompt('Please enter your email or GitHub handle:');
+          
+          if (contactInfo && contactInfo.trim()) {
+            // Determine if it's email or github based on simple heuristic
+            const contactType = contactInfo.includes('@') ? 'email' : 'github';
+            
+            // Save to database
+            const { error: dbError } = await supabase
+              .from('portfolio_responses')
+              .insert({
+                user_response: inputValue,
+                contact_info: contactInfo.trim(),
+                contact_type: contactType
+              });
+            
+            if (dbError) {
+              console.error('Error saving to database:', dbError);
+              alert('Response sent successfully, but there was an issue saving your contact info.');
+            } else {
+              alert('Perfect! Your response and contact info have been saved. I\'ll be in touch soon!');
+            }
+          } else {
+            alert('No worries! Your response has been sent successfully.');
+          }
+        } else {
+          // Save response without contact info
+          const { error: dbError } = await supabase
+            .from('portfolio_responses')
+            .insert({
+              user_response: inputValue
+            });
+          
+          if (dbError) {
+            console.error('Error saving to database:', dbError);
+          }
+          
+          alert('Thanks for your response! Message sent successfully.');
+        }
+        
         setInputValue("");
         setIsInputMode(false);
       }
@@ -74,7 +115,7 @@ const InteractiveMarquee = ({ content }: InteractiveMarqueeProps) => {
             onKeyDown={handleKeyDown}
             onBlur={handleBlur}
             className="bg-transparent border-b-[6px] sm:border-b-[8px] md:border-b-[12px] border-black text-black text-4xl sm:text-6xl md:text-8xl font-mono font-bold leading-tight outline-none w-full max-w-[90vw] sm:max-w-[600px]"
-            placeholder=""
+            placeholder="multimodal"
             disabled={isSubmitting}
           />
           {inputValue.trim() && (
@@ -108,8 +149,8 @@ const InteractiveMarquee = ({ content }: InteractiveMarqueeProps) => {
         </span>
       </span>
 
-      {/* Interactive cursor indicator */}
-      <ArrowUpLeft className="absolute" style={{ right: '-25px', bottom: '-30px' }} />
+      {/* Interactive cursor indicator - moved to bottom right with hand pointer style */}
+      <span className="absolute -bottom-2 -right-2 w-3 h-3 bg-black rounded-sm rotate-12 animate-pulse cursor-pointer"></span>
     </span>
   );
 };
