@@ -44,7 +44,7 @@ const InteractiveMarquee = ({ content }: InteractiveMarqueeProps) => {
     }
   };
 
-  const handleKeyDown = (e: React.KeyEvent) => {
+  const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === 'Escape') {
       setIsInputMode(false);
       setInputValue("");
