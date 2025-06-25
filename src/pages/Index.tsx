@@ -25,13 +25,12 @@ const Index = () => {
               <span className={`transition-opacity duration-300 ${isHovered ? 'opacity-0' : 'opacity-100'}`}>
                 _____
               </span>
-              {isHovered && (
+              
                 <span className="absolute inset-0 overflow-hidden whitespace-nowrap">
-                  <span className="inline-block animate-[marquee_8s_linear_infinite]">
+                  <span className="inline-block animate-[marquee_60s_linear_infinite]">
                     {marqueeContent.join(" • ")} • {marqueeContent.join(" • ")} • 
                   </span>
                 </span>
-              )}
             </span>
           </h1>
         </div>
@@ -39,8 +38,9 @@ const Index = () => {
         {/* Introduction */}
         <div className="mb-20">
           <p className="text-xl font-sans text-gray-800 leading-relaxed max-w-3xl">
-            Hi! I'm Konrad. I'm a UX engineer who designs multimodal interfaces. With 6+ years of experience in technical roles as well as a post-Delft affinity for user-centeredness, I combine skills in data, development and design to create novel ways of interacting with digital products.
+            I'm Konrad Krawczyk. I'm a UX engineer who designs, develops and studies multimodal interfaces. With 6+ years of experience in technical roles as well as a trained eye for user-centered design, I combine skills in data, development and design to create novel ways of interacting with digital products.
           </p>
+
         </div>
       </section>
 
