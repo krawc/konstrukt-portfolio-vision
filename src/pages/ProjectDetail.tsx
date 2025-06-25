@@ -12,7 +12,7 @@ const ProjectDetail = () => {
 
   if (!project) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-gray-100 flex items-center justify-center">
+      <div className="min-h-screen bg-gradient-to-br from-gray-100 via-gray-50 to-white flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-4xl font-mono font-bold text-black mb-4">Project not found</h1>
           <Link to="/" className="text-black font-mono hover:underline">← back to portfolio</Link>
@@ -31,15 +31,40 @@ const ProjectDetail = () => {
   };
 
   const nextImage = () => {
-    setCurrentImageIndex((prev) => (prev + 1) % project.images.length);
+    if (project.images.length > 1) {
+      setCurrentImageIndex((prev) => (prev + 1) % project.images.length);
+    }
   };
 
   const prevImage = () => {
-    setCurrentImageIndex((prev) => (prev - 1 + project.images.length) % project.images.length);
+    if (project.images.length > 1) {
+      setCurrentImageIndex((prev) => (prev - 1 + project.images.length) % project.images.length);
+    }
   };
 
+  // Handle keyboard navigation
+  const handleKeyDown = (e: KeyboardEvent) => {
+    if (!lightboxOpen) return;
+    
+    if (e.key === 'Escape') {
+      closeLightbox();
+    } else if (e.key === 'ArrowLeft') {
+      prevImage();
+    } else if (e.key === 'ArrowRight') {
+      nextImage();
+    }
+  };
+
+  // Add keyboard event listener when lightbox opens
+  useState(() => {
+    if (lightboxOpen) {
+      document.addEventListener('keydown', handleKeyDown);
+      return () => document.removeEventListener('keydown', handleKeyDown);
+    }
+  });
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-gray-100">
+    <div className="min-h-screen bg-gradient-to-br from-gray-100 via-gray-50 to-white">
       {/* Navigation */}
       <nav className="px-8 py-6 max-w-6xl mx-auto">
         <Link to="/" className="inline-flex items-center text-black font-mono hover:underline">
@@ -81,16 +106,27 @@ const ProjectDetail = () => {
 
         {/* Description */}
         <div className="prose prose-lg max-w-none">
-          <p className="text-lg font-sans text-gray-800 leading-relaxed">
-            {project.description}
-          </p>
+          {/* Check if project has HTML description, otherwise use plain text */}
+          {(project as any).description_html ? (
+            <div 
+              className="text-lg font-sans text-gray-800 leading-relaxed"
+              dangerouslySetInnerHTML={{ __html: (project as any).description_html }}
+            />
+          ) : (
+            <p className="text-lg font-sans text-gray-800 leading-relaxed">
+              {project.description}
+            </p>
+          )}
         </div>
       </main>
 
       {/* Lightbox */}
       {lightboxOpen && (
-        <div className="fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center p-4">
-          <div className="relative max-w-5xl max-h-full">
+        <div 
+          className="fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center p-4"
+          onClick={closeLightbox}
+        >
+          <div className="relative max-w-5xl max-h-full" onClick={(e) => e.stopPropagation()}>
             <img
               src={project.images[currentImageIndex]}
               alt={`${project.title} - Image ${currentImageIndex + 1}`}
@@ -100,33 +136,35 @@ const ProjectDetail = () => {
             {/* Close button */}
             <button
               onClick={closeLightbox}
-              className="absolute top-4 right-4 text-white hover:text-gray-300 transition-colors"
+              className="absolute top-4 right-4 text-white hover:text-gray-300 transition-colors z-10"
             >
               <X size={32} />
             </button>
 
-            {/* Navigation buttons */}
+            {/* Navigation buttons - only show if more than one image */}
             {project.images.length > 1 && (
               <>
                 <button
                   onClick={prevImage}
-                  className="absolute left-4 top-1/2 transform -translate-y-1/2 text-white hover:text-gray-300 transition-colors"
+                  className="absolute left-4 top-1/2 transform -translate-y-1/2 text-white hover:text-gray-300 transition-colors z-10"
                 >
                   <ChevronLeft size={48} />
                 </button>
                 <button
                   onClick={nextImage}
-                  className="absolute right-4 top-1/2 transform -translate-y-1/2 text-white hover:text-gray-300 transition-colors"
+                  className="absolute right-4 top-1/2 transform -translate-y-1/2 text-white hover:text-gray-300 transition-colors z-10"
                 >
                   <ChevronRight size={48} />
                 </button>
               </>
             )}
 
-            {/* Image counter */}
-            <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-white font-mono text-sm">
-              {currentImageIndex + 1} / {project.images.length}
-            </div>
+            {/* Image counter - only show if more than one image */}
+            {project.images.length > 1 && (
+              <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-white font-mono text-sm">
+                {currentImageIndex + 1} / {project.images.length}
+              </div>
+            )}
           </div>
         </div>
       )}
