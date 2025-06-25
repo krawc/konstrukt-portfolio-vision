@@ -63,7 +63,7 @@ const Index = () => {
               onMouseEnter={() => setIsHovered(true)}
               onMouseLeave={() => setIsHovered(false)}
             >
-              <span className={`transition-opacity duration-300 ${isHovered ? 'opacity-0' : 'opacity-100'}`}>
+              <span className={`transition-opacity duration-300 border-b-[15px] border-black text-transparent`}>
                 _____
               </span>
               
@@ -139,8 +139,8 @@ const Index = () => {
 
       {/* Other Projects */}
       <section className="px-8 py-16 max-w-6xl mx-auto">
-        <div className="flex items-center justify-between mb-8">
-          <h2 className="text-4xl font-mono font-bold text-black">Other Projects</h2>
+        <div className="flex justify-between mb-8 flex-col gap-4 md:flex-row">
+          <h2 className="text-4xl font-mono font-bold text-black">Projects</h2>
           
           {/* Tag filter */}
           <div className="flex items-center gap-2">
