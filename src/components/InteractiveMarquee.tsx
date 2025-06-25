@@ -63,28 +63,30 @@ const InteractiveMarquee = ({ content }: InteractiveMarqueeProps) => {
 
   if (isInputMode) {
     return (
-      <form onSubmit={handleSubmit} className="relative inline-block">
-        <input
-          ref={inputRef}
-          type="text"
-          value={inputValue}
-          onChange={(e) => setInputValue(e.target.value)}
-          onKeyDown={handleKeyDown}
-          onBlur={handleBlur}
-          className="bg-transparent border-b-[8px] sm:border-b-[12px] border-black text-black text-6xl md:text-8xl font-mono font-bold leading-tight outline-none min-w-[300px] max-w-[600px]"
-          placeholder="multimodal"
-          disabled={isSubmitting}
-        />
-        {inputValue.trim() && (
-          <button
-            type="submit"
+      <div className="relative">
+        <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row items-start sm:items-end gap-2 sm:gap-4">
+          <input
+            ref={inputRef}
+            type="text"
+            value={inputValue}
+            onChange={(e) => setInputValue(e.target.value)}
+            onKeyDown={handleKeyDown}
+            onBlur={handleBlur}
+            className="bg-transparent border-b-[6px] sm:border-b-[8px] md:border-b-[12px] border-black text-black text-4xl sm:text-6xl md:text-8xl font-mono font-bold leading-tight outline-none w-full max-w-[90vw] sm:max-w-[600px]"
+            placeholder="multimodal"
             disabled={isSubmitting}
-            className="ml-4 px-4 py-2 bg-black text-white font-mono text-sm hover:bg-gray-800 transition-colors rounded-lg disabled:opacity-50"
-          >
-            {isSubmitting ? 'Sending...' : 'Press ↵ to send'}
-          </button>
-        )}
-      </form>
+          />
+          {inputValue.trim() && (
+            <button
+              type="submit"
+              disabled={isSubmitting}
+              className="px-3 py-2 bg-black text-white font-mono text-xs sm:text-sm hover:bg-gray-800 transition-colors rounded-lg disabled:opacity-50 whitespace-nowrap flex-shrink-0"
+            >
+              {isSubmitting ? 'Sending...' : 'Press ↵ to send'}
+            </button>
+          )}
+        </form>
+      </div>
     );
   }
 
@@ -95,7 +97,7 @@ const InteractiveMarquee = ({ content }: InteractiveMarqueeProps) => {
       onMouseLeave={() => setIsHovered(false)}
       onClick={handleClick}
     >
-      <span className={`transition-opacity duration-300 border-b-[8px] sm:border-b-[12px] border-black text-transparent`}>
+      <span className={`transition-opacity duration-300 border-b-[6px] sm:border-b-[8px] md:border-b-[12px] border-black text-transparent`}>
         _____
       </span>
       
@@ -105,8 +107,8 @@ const InteractiveMarquee = ({ content }: InteractiveMarqueeProps) => {
         </span>
       </span>
 
-      {/* Interactive cursor indicator */}
-      <span className="absolute -top-1 -right-1 w-2 h-2 bg-black rounded-full animate-pulse"></span>
+      {/* Interactive cursor indicator - moved to bottom right with hand pointer style */}
+      <span className="absolute -bottom-2 -right-2 w-3 h-3 bg-black rounded-sm rotate-12 animate-pulse cursor-pointer"></span>
     </span>
   );
 };
