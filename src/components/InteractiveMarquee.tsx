@@ -1,6 +1,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import { supabase } from "@/integrations/supabase/client";
+import { ArrowUpLeft } from "lucide-react";
 
 interface InteractiveMarqueeProps {
   content: string[];
@@ -73,7 +74,7 @@ const InteractiveMarquee = ({ content }: InteractiveMarqueeProps) => {
             onKeyDown={handleKeyDown}
             onBlur={handleBlur}
             className="bg-transparent border-b-[6px] sm:border-b-[8px] md:border-b-[12px] border-black text-black text-4xl sm:text-6xl md:text-8xl font-mono font-bold leading-tight outline-none w-full max-w-[90vw] sm:max-w-[600px]"
-            placeholder="multimodal"
+            placeholder=""
             disabled={isSubmitting}
           />
           {inputValue.trim() && (
@@ -108,6 +109,7 @@ const InteractiveMarquee = ({ content }: InteractiveMarqueeProps) => {
       </span>
 
       {/* Interactive cursor indicator */}
+      <ArrowUpLeft className="absolute" style={{ right: '-25px', bottom: '-30px' }} />
     </span>
   );
 };
