@@ -78,7 +78,7 @@ const Index = () => {
               get in touch
             </a>
             <a 
-              href="https://nbujwalvdcjefepwnyky.supabase.co/storage/v1/object/public/assets/docs/KK_resume_portfolio.pdf"
+              href="https://nbujwalvdcjefepwnyky.supabase.co/storage/v1/object/public/assets/docs/KK_resume_a.pdf"
               target="_blank"
               className="inline-flex items-center gap-2 px-6 py-3 border border-black text-black font-mono text-sm hover:bg-black hover:text-white transition-colors rounded-lg"
             >
