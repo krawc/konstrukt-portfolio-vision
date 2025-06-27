@@ -89,7 +89,7 @@ export const projectsRaw = [
     "title": "artmo",
     "description": "ARTMO is a social platform for art promotion, curation, and sales, currently with 150,000+ users. Its commission-free approach challenges traditional art sales models while providing marketing tools for established institutions and empowering independent artists and buyers worldwide. As a co-founder and product lead, I managed user research, UI prototypes, front-end development, and project management.",
     "type": "work",
-    "year": "2018",
+    "year": "2024",
     "images": [
       "https://www.dropbox.com/scl/fi/qetdz6l06c4h0m1x8uwzf/artmo1.png?rlkey=q2nufrnlt2m8prrwihtdmnb2v&st=kn44i7z4&raw=1",
       "https://www.dropbox.com/scl/fi/e9f8q6u5tdex1ltrf3poq/artmo2.png?rlkey=lfpf7agdmpd1h0ark1v0lzutu&st=wt6rcfto&raw=1"
@@ -115,6 +115,17 @@ export const projectsRaw = [
     "images": [
       "https://www.dropbox.com/scl/fi/6f5rpy3fubiaic1c50bol/ilive.jpeg?rlkey=271ovm910yrl7n8v2pyp1nxpl&st=yoha07g7&raw=1",
       "https://www.dropbox.com/scl/fi/ntjia5khzwsybaanh7bdx/ilive2.jpeg?rlkey=5vwy5xqspgy2f1pen1btcchg6&st=c6xp31i3&raw=1"
+    ]
+  },
+  {
+    "id": 12,
+    "title": "Art-Science-Node",
+    "description": "During my internship at ASN—a Berlin-based hub for interdisciplinary collaboration between art, science, and technology—I worked on two key projects that bridged digital design with scientific communication. I contributed to the redesign of Rhizosphere, an augmented reality app showcasing mixed-reality artworks, by conducting a usability inspection and prototyping improvements to make the interface more intuitive and accessible. In parallel, I co-produced a 3-minute animation introducing a new research cycle on soil degradation and sustainable fertilization (SPIN-FERT), which involved learning Blender from scratch and translating complex scientific content into a clear visual narrative. The experience deepened my skills in AR UX design, scientific storytelling, and cross-cultural teamwork.",
+    "type": "work",
+    "year": "2023",
+    "images": [
+      "https://nbujwalvdcjefepwnyky.supabase.co/storage/v1/object/public/assets/images/asn1_1.jpg",
+      "https://nbujwalvdcjefepwnyky.supabase.co/storage/v1/object/public/assets/images/asn2_2.jpg"
     ]
   },
   {
