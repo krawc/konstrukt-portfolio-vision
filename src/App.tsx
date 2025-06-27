@@ -118,7 +118,7 @@ export const projectsRaw = [
     ]
   },
   {
-    "id": 12,
+    "id": 13,
     "title": "Art-Science-Node",
     "description": "During my internship at ASN—a Berlin-based hub for interdisciplinary collaboration between art, science, and technology—I worked on two key projects that bridged digital design with scientific communication. I contributed to the redesign of Rhizosphere, an augmented reality app showcasing mixed-reality artworks, by conducting a usability inspection and prototyping improvements to make the interface more intuitive and accessible. In parallel, I co-produced a 3-minute animation introducing a new research cycle on soil degradation and sustainable fertilization (SPIN-FERT), which involved learning Blender from scratch and translating complex scientific content into a clear visual narrative. The experience deepened my skills in AR UX design, scientific storytelling, and cross-cultural teamwork.",
     "type": "work",
