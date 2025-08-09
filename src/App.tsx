@@ -160,7 +160,18 @@ export const projectsRaw = [
       "https://www.dropbox.com/scl/fi/sltjnc89mc6qqcbx5eu56/aic.png?rlkey=z604xmbofuini5qhpqqhmg9hn&st=0bbiei73&raw=1",
       "https://www.dropbox.com/scl/fi/azvg44j5fijpj8mwauib7/aic2.png?rlkey=7vhzqc4i7rhyjbrxsvsty8b9l&st=vsm7ruff&raw=1"
     ]
-  }
+  },
+    {
+    "id": 14,
+    "title": "soundgate",
+    "description": "An electronic musical performance project delivered for the class New Interfaces in Musical Expression at NYU Shanghai. The interface consisted of a line-up of 6 capacitive sensors built with soft ciruit tape on top of a curtain. Sounds were triggered via Arduino and Processing. ",
+    "description_html": 'An electronic musical performance project delivered for the class New Interfaces in Musical Expression at NYU Shanghai. The interface consisted of a line-up of 6 capacitive sensors built with soft ciruit tape on top of a curtain. Sounds were triggered via Arduino and Processing. <iframe width="560" height="315" src="https://www.youtube.com/embed/gjUY0nfgeec?si=klLIGncoGiZmPl0J" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> ',
+    "type": "play",
+    "year": "2018",
+    "images": [
+      "https://nbujwalvdcjefepwnyky.supabase.co/storage/v1/object/public/assets/images/nime1.png"
+    ]
+  },
   // {
   //   "id": 10,
   //   "title": "NM WEBDEX",
