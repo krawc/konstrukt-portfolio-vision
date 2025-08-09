@@ -74,6 +74,18 @@ export const projectsRaw = [
     ]
   },
   {
+    "id": 15,
+    "title": "Settled.",
+    "description": "Settled is a mobile app designed to make group travel effortless by combining trip planning, activity discovery, group voting, and expense sharing in one place. Users can explore activities with their travel crew, vote on upcoming adventures in real-time, and split costs seamlessly using manual or receipt-scanning features. With its clean, intuitive interface, Settled keeps group trips organized, fair, and fun - from planning and decision-making to settling up at the end.",
+    "description_html": "Settled is a mobile app designed to make group travel effortless by combining trip planning, activity discovery, group voting, and expense sharing in one place. Users can explore activities with their travel crew, vote on upcoming adventures in real-time, and split costs seamlessly using manual or receipt-scanning features. With its clean, intuitive interface, Settled keeps group trips organized, fair, and fun - from planning and decision-making to settling up at the end.",
+    "type": "work",
+    "year": "2025",
+    "images": [
+      "https://nbujwalvdcjefepwnyky.supabase.co/storage/v1/object/public/assets/images/settled_notitle.jpg",
+      "https://nbujwalvdcjefepwnyky.supabase.co/storage/v1/object/public/assets/images/settled_case.jpg"
+    ]
+  },
+  {
     "id": 3,
     "title": "Picnic Re-design",
     "description": "This group project for Picnic, an online grocery shopping service, aimed to enhance app features for greater user control and flexibility. Catering to identified personas 'Manager' and 'Chef,' the redesign improved product search, cart categorization, and dietary preference personalization. User tests showed significant success with a 7/10 target achievement.",
@@ -172,18 +184,7 @@ export const projectsRaw = [
       "https://nbujwalvdcjefepwnyky.supabase.co/storage/v1/object/public/assets/images/nime1.jpg"
     ]
   },
-  {
-    "id": 15,
-    "title": "Settled.",
-    "description": "Settled is a mobile app designed to make group travel effortless by combining trip planning, activity discovery, group voting, and expense sharing in one place. Users can explore activities with their travel crew, vote on upcoming adventures in real-time, and split costs seamlessly using manual or receipt-scanning features. With its clean, intuitive interface, Settled keeps group trips organized, fair, and fun - from planning and decision-making to settling up at the end.",
-    "description_html": "Settled is a mobile app designed to make group travel effortless by combining trip planning, activity discovery, group voting, and expense sharing in one place. Users can explore activities with their travel crew, vote on upcoming adventures in real-time, and split costs seamlessly using manual or receipt-scanning features. With its clean, intuitive interface, Settled keeps group trips organized, fair, and fun - from planning and decision-making to settling up at the end.",
-    "type": "work",
-    "year": "2025",
-    "images": [
-      "https://nbujwalvdcjefepwnyky.supabase.co/storage/v1/object/public/assets/images/settled.jpg",
-      "https://nbujwalvdcjefepwnyky.supabase.co/storage/v1/object/public/assets/images/settled_case.jpg"
-    ]
-  }
+
   // {
   //   "id": 10,
   //   "title": "NM WEBDEX",
