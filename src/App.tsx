@@ -169,7 +169,7 @@ export const projectsRaw = [
     "type": "play",
     "year": "2018",
     "images": [
-      "https://nbujwalvdcjefepwnyky.supabase.co/storage/v1/object/public/assets/images/nime1.png"
+      "https://nbujwalvdcjefepwnyky.supabase.co/storage/v1/object/public/assets/images/nime1.jpg"
     ]
   },
   // {
