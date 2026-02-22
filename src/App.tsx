@@ -50,6 +50,17 @@ export const projectsRaw = [
     ]
   },
   {
+    "id": 16,
+    "title": "Day Player Pro",
+    "description": "Day Player Pro · Realtime Acting Coach is a full-stack prototype that reimagines the traditional acting partner as an AI-powered, voice-driven rehearsal companion. Built with React, TypeScript, Supabase Edge Functions, and OpenAI’s gpt-4o-realtime model, the app allows actors to upload a scene, refine a coaching prompt, and receive spoken feedback in real time through a secure WebRTC session. By minting ephemeral tokens server-side, the architecture keeps API keys off the client while enabling low-latency audio streaming and live transcript logs. An optional Agentic Mode integrates ElevenLabs for a dynamic “scene partner” experience, complete with contextual script awareness and conversational turn-taking. The result is a lightweight but production-minded foundation for a modern rehearsal tool—private, responsive, and designed around the emotional rhythm of performance.",
+    "description_html": "Day Player Pro · Realtime Acting Coach is a full-stack prototype that reimagines the traditional acting partner as an AI-powered, voice-driven rehearsal companion. Built with React, TypeScript, Supabase Edge Functions, and OpenAI’s gpt-4o-realtime model, the app allows actors to upload a scene, refine a coaching prompt, and receive spoken feedback in real time through a secure WebRTC session. By minting ephemeral tokens server-side, the architecture keeps API keys off the client while enabling low-latency audio streaming and live transcript logs. An optional Agentic Mode integrates ElevenLabs for a dynamic “scene partner” experience, complete with contextual script awareness and conversational turn-taking. The result is a lightweight but production-minded foundation for a modern rehearsal tool—private, responsive, and designed around the emotional rhythm of performance.",
+    "type": "play",
+    "year": "2026",
+    "images": [
+      "https://nbujwalvdcjefepwnyky.supabase.co/storage/v1/object/public/assets/images/dpp-mockup.png"
+    ]
+  }
+  {
     "id": 12,
     "title": "eureka",
     "description": "This project explores innovative approaches to international train travel by addressing current preconceptions and leveraging modern lifestyle shifts. Central to the project is a travel planning tool designed to enhance the quality of door-to-door travel. This tool provides users with a quality-oriented view of their journey, highlighting not just logistics but also cognitive aspects of their travel time. By visualizing occupied, idle, and free time, and incorporating information on amenities and multimodal connections, the tool encourages process-oriented choices, nudging users toward sustainable ground transit options.",
