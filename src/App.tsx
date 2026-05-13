@@ -17,7 +17,7 @@ export const projectsRaw = [
     
     "description": "During my internship at BMW's in-car voice assistant team, I supported the integration of large language models into automotive UX. My work helped define the assistant's interaction style by contributing to the development of a fine-tuning dataset and prompt design. A feedback platform I co-developed enabled compliant, large-scale collection of user preferences around verbosity. Insights from user studies shaped key design decisions and contributed directly to team-wide strategy updates. I also helped improve onboarding UX in the demo app, making the assistant easier to showcase to internal and external stakeholders.",
     "description_html": 'During my internship at BMW\'s in-car voice assistant team, I supported the integration of large language models into automotive UX. My work helped define the assistant\'s interaction style by contributing to the development of a fine-tuning dataset and prompt design. A feedback platform I co-developed enabled compliant, large-scale collection of user preferences around verbosity. Insights from user studies shaped key design decisions and contributed directly to team-wide strategy updates. I also helped improve onboarding UX in the demo app, making the assistant easier to showcase to internal and external stakeholders.<br/><br/> <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="100%" height="450" src="https://embed.figma.com/deck/444PWwPIrL52rwRWtWgrnO/LLM-Human-Feedback-Strategy---case-study?node-id=1-352&viewport=-100%2C-80%2C0.48&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&embed-host=share" allowfullscreen></iframe> <br/><br/> <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="100%" height="450" src="https://embed.figma.com/proto/iJS5uppZ4LN6aYKB1cheev/Chat-BMW-island?page-id=10%3A16&node-id=13-1621&starting-point-node-id=13%3A1621&scaling=scale-down-width&content-scaling=fixed&show-proto-sidebar=0&embed-host=share" allowfullscreen></iframe>',
-    "type": "work",
+    "type": ["UXD", "multimodal"],
     "year": "2025",
     "links": [
       {
@@ -43,7 +43,7 @@ export const projectsRaw = [
     "title": "Visio Voice",
     "description": "This thesis project investigates the challenges faced by blind and low-vision (BLV) individuals in using digital technologies, particularly focusing on the usability and accessibility of voice assistant technologies. The study aims to identify key problems experienced by BLV users, analyze the limitations and recent developments in voice assistant technology, and co-create a solution aimed at enhancing the usability of voice assistants for non-visual users. To achieve these objectives, a mixed-methods approach was employed, including a literature review, usability inspections, digital anthropology, as well as co-design sessions with Visio experts and prototype testing with BLV users to validate potential solutions.",
     "description_html": "This thesis project investigates the challenges faced by blind and low-vision (BLV) individuals in using digital technologies, particularly focusing on the usability and accessibility of voice assistant technologies. The study aims to identify key problems experienced by BLV users, analyze the limitations and recent developments in voice assistant technology, and co-create a solution aimed at enhancing the usability of voice assistants for non-visual users. To achieve these objectives, a mixed-methods approach was employed, including a literature review, usability inspections, digital anthropology, as well as co-design sessions with Visio experts and prototype testing with BLV users to validate potential solutions.<br/> <br/> <h1>View summarized project report here:</h1> <br/> <iframe src='https://nbujwalvdcjefepwnyky.supabase.co/storage/v1/object/public/assets/docs/FinalProjectReportKK_compressed.pdf' width='100%' height='500'></iframe>  <br/><br/>Project Showcase (Audio):  <br/><br/><audio controls width='100%' src='https://nbujwalvdcjefepwnyky.supabase.co/storage/v1/object/public/assets/audio/ProjectShowcase.mp3'></audio>",
-    "type": "work",
+    "type": ["UXD", "multimodal"],
     "year": "2024",
     "images": [
       "https://nbujwalvdcjefepwnyky.supabase.co/storage/v1/object/public/assets/images/visio1.jpg",
@@ -54,18 +54,18 @@ export const projectsRaw = [
     "title": "Day Player Pro",
     "description": "Day Player Pro · Realtime Acting Coach is a full-stack prototype that reimagines the traditional acting partner as an AI-powered, voice-driven rehearsal companion. Built with React, TypeScript, Supabase Edge Functions, and OpenAI’s gpt-4o-realtime model, the app allows actors to upload a scene, refine a coaching prompt, and receive spoken feedback in real time through a secure WebRTC session. By minting ephemeral tokens server-side, the architecture keeps API keys off the client while enabling low-latency audio streaming and live transcript logs. An optional Agentic Mode integrates ElevenLabs for a dynamic “scene partner” experience, complete with contextual script awareness and conversational turn-taking. The result is a lightweight but production-minded foundation for a modern rehearsal tool—private, responsive, and designed around the emotional rhythm of performance.",
     "description_html": "Day Player Pro · Realtime Acting Coach is a full-stack prototype that reimagines the traditional acting partner as an AI-powered, voice-driven rehearsal companion. Built with React, TypeScript, Supabase Edge Functions, and OpenAI’s gpt-4o-realtime model, the app allows actors to upload a scene, refine a coaching prompt, and receive spoken feedback in real time through a secure WebRTC session. By minting ephemeral tokens server-side, the architecture keeps API keys off the client while enabling low-latency audio streaming and live transcript logs. An optional Agentic Mode integrates ElevenLabs for a dynamic “scene partner” experience, complete with contextual script awareness and conversational turn-taking. The result is a lightweight but production-minded foundation for a modern rehearsal tool—private, responsive, and designed around the emotional rhythm of performance.",
-    "type": "play",
+    "type": ["multimodal", "play"],
     "year": "2026",
     "images": [
       "https://nbujwalvdcjefepwnyky.supabase.co/storage/v1/object/public/assets/images/dpp-mockup.png"
     ]
-  }
+  },
   {
     "id": 12,
     "title": "eureka",
     "description": "This project explores innovative approaches to international train travel by addressing current preconceptions and leveraging modern lifestyle shifts. Central to the project is a travel planning tool designed to enhance the quality of door-to-door travel. This tool provides users with a quality-oriented view of their journey, highlighting not just logistics but also cognitive aspects of their travel time. By visualizing occupied, idle, and free time, and incorporating information on amenities and multimodal connections, the tool encourages process-oriented choices, nudging users toward sustainable ground transit options.",
     "description_html": "This project explores innovative approaches to international train travel by addressing current preconceptions and leveraging modern lifestyle shifts. Central to the project is a travel planning tool designed to enhance the quality of door-to-door travel. This tool provides users with a quality-oriented view of their journey, highlighting not just logistics but also cognitive aspects of their travel time. By visualizing occupied, idle, and free time, and incorporating information on amenities and multimodal connections, the tool encourages process-oriented choices, nudging users toward sustainable ground transit options. <br/> <br/> <h1>View case study here:</h1> <br/> <iframe src='https://nbujwalvdcjefepwnyky.supabase.co/storage/v1/object/public/assets/docs/vip_slides3.pdf' width='100%' height='500'></iframe> ",
-    "type": "play",
+    "type": ["UXD", "play"],
     "year": "2024",
     "images": [
       "https://nbujwalvdcjefepwnyky.supabase.co/storage/v1/object/public/assets/images/eureka1.jpg",
@@ -76,7 +76,7 @@ export const projectsRaw = [
     "id": 2,
     "title": "bits & pieces",
     "description": "This product was developed to help visitors of Kunstmuseum Den Haag find meaning in abstract art. It consists of cue cards, packaged in a stylish paper box with a black ribbon handle, designed to guide users through the phases 'See,' 'Think,' and 'Feel' to deepen their understanding of artwork. The cards are made from durable materials and feature a minimalistic, abstract aesthetic.",
-    "type": "play",
+    "type": ["culture", "play"],
     "year": "2022",
     "images": [
       "https://nbujwalvdcjefepwnyky.supabase.co/storage/v1/object/public/assets/images/bits1.jpg",
@@ -89,7 +89,7 @@ export const projectsRaw = [
     "title": "Settled.",
     "description": "Settled is a mobile app designed to make group travel effortless by combining trip planning, activity discovery, group voting, and expense sharing in one place. Users can explore activities with their travel crew, vote on upcoming adventures in real-time, and split costs seamlessly using manual or receipt-scanning features. With its clean, intuitive interface, Settled keeps group trips organized, fair, and fun - from planning and decision-making to settling up at the end.",
     "description_html": "Settled is a mobile app designed to make group travel effortless by combining trip planning, activity discovery, group voting, and expense sharing in one place. Users can explore activities with their travel crew, vote on upcoming adventures in real-time, and split costs seamlessly using manual or receipt-scanning features. With its clean, intuitive interface, Settled keeps group trips organized, fair, and fun - from planning and decision-making to settling up at the end.",
-    "type": "work",
+    "type": ["UXD", "web"],
     "year": "2025",
     "images": [
       "https://nbujwalvdcjefepwnyky.supabase.co/storage/v1/object/public/assets/images/settled_notitle.jpg",
@@ -100,7 +100,7 @@ export const projectsRaw = [
     "id": 3,
     "title": "Picnic Re-design",
     "description": "This group project for Picnic, an online grocery shopping service, aimed to enhance app features for greater user control and flexibility. Catering to identified personas 'Manager' and 'Chef,' the redesign improved product search, cart categorization, and dietary preference personalization. User tests showed significant success with a 7/10 target achievement.",
-    "type": "work",
+    "type": ["UXD", "web"],
     "year": "2023",
     "images": [
       "https://nbujwalvdcjefepwnyky.supabase.co/storage/v1/object/public/assets/images/picnic1.jpg",
@@ -111,7 +111,7 @@ export const projectsRaw = [
     "id": 4,
     "title": "artmo",
     "description": "ARTMO is a social platform for art promotion, curation, and sales, currently with 150,000+ users. Its commission-free approach challenges traditional art sales models while providing marketing tools for established institutions and empowering independent artists and buyers worldwide. As a co-founder and product lead, I managed user research, UI prototypes, front-end development, and project management.",
-    "type": "work",
+    "type": ["web", "culture"],
     "year": "2024",
     "images": [
       "https://www.dropbox.com/scl/fi/qetdz6l06c4h0m1x8uwzf/artmo1.png?rlkey=q2nufrnlt2m8prrwihtdmnb2v&st=kn44i7z4&raw=1",
@@ -122,7 +122,7 @@ export const projectsRaw = [
     "id": 5,
     "title": "LiveRoom",
     "description": "LiveRoom Media addresses the lack of online monetization and networking opportunities in the music industry post-COVID-19. It offers a platform for musicians to monetize performances, network, and upskill. As technical lead, I supported these initiatives through targeted solutions.",
-    "type": "work",
+    "type": ["web", "culture"],
     "year": "2020",
     "images": [
       "https://www.dropbox.com/scl/fi/9q69n4fpythjjrdmp14jt/lr.jpeg?rlkey=33kflaslfgzt4l02p18tl6rws&st=7nuardzz&raw=1",
@@ -133,7 +133,7 @@ export const projectsRaw = [
     "id": 6,
     "title": "iLiveInPublic",
     "description": "This project explores the concept of the 'digital panopticon' through an 8-hour performance experiment where every interaction with the web was recorded and transformed into algorithm-feeding data. It was later presented at a conference at the China Academy of Art in December 2021.",
-    "type": "play",
+    "type": ["culture", "play"],
     "year": "2019",
     "images": [
       "https://www.dropbox.com/scl/fi/6f5rpy3fubiaic1c50bol/ilive.jpeg?rlkey=271ovm910yrl7n8v2pyp1nxpl&st=yoha07g7&raw=1",
@@ -144,7 +144,7 @@ export const projectsRaw = [
     "id": 13,
     "title": "Art-Science-Node",
     "description": "During my internship at ASN—a Berlin-based hub for interdisciplinary collaboration between art, science, and technology—I worked on two key projects that bridged digital design with scientific communication. I contributed to the redesign of Rhizosphere, an augmented reality app showcasing mixed-reality artworks, by conducting a usability inspection and prototyping improvements to make the interface more intuitive and accessible. In parallel, I co-produced a 3-minute animation introducing a new research cycle on soil degradation and sustainable fertilization (SPIN-FERT), which involved learning Blender from scratch and translating complex scientific content into a clear visual narrative. The experience deepened my skills in AR UX design, scientific storytelling, and cross-cultural teamwork.",
-    "type": "work",
+    "type": ["UXD", "culture", "multimodal"],
     "year": "2023",
     "images": [
       "https://nbujwalvdcjefepwnyky.supabase.co/storage/v1/object/public/assets/images/asn1_1.jpg",
@@ -155,7 +155,7 @@ export const projectsRaw = [
     "id": 7,
     "title": "BossySuits",
     "description": "This project focused on creating a subscription-based professional apparel brand for millennials. As part of a team, I developed a JavaScript-based e-commerce extension to automate unique package generation based on customer data. The entire order-to-package generation process was reduced to two clicks.",
-    "type": "work",
+    "type": ["web"],
     "year": "2018",
     "images": [
       "https://www.dropbox.com/scl/fi/84exkzd1yy76qbw5ndqhb/bos.png?rlkey=k29ssau3llt4jrmt7ubgkzjw9&st=3x562xfa&raw=1",
@@ -166,7 +166,7 @@ export const projectsRaw = [
     "id": 8,
     "title": "inklined",
     "description": "A generative art project paying tribute to Franz Kline's abstract expressionism. Using p5.js, I created functions that leveraged randomization and Perlin noise to produce calligraphic, abstract visuals. One of the pieces, inklined #1, was sold as an NFT on mintable.app.",
-    "type": "play",
+    "type": ["play", "culture"],
     "year": "2018",
     "images": [
       "https://www.dropbox.com/scl/fi/vtt48guyan2xypbw5k9vt/ink1.png?rlkey=0ozeo4f0fh1qzry2cy8lqlhyz&st=67wzozof&raw=1",
@@ -177,7 +177,7 @@ export const projectsRaw = [
     "id": 9,
     "title": "Center for AI and Culture",
     "description": "A freelance project involving the creation of a prototype website for The Center for AI and Culture at NYU Shanghai. This platform serves as a hub for designers, engineers, and theorists to explore AI developments. Additionally, it acts as a content management system for faculty essays. The project was co-founded by Prof. Benjamin Bratton.",
-    "type": "work",
+    "type": ["web", "culture"],
     "year": "2021",
     "images": [
       "https://www.dropbox.com/scl/fi/sltjnc89mc6qqcbx5eu56/aic.png?rlkey=z604xmbofuini5qhpqqhmg9hn&st=0bbiei73&raw=1",
@@ -189,7 +189,7 @@ export const projectsRaw = [
     "title": "soundgate",
     "description": "An electronic musical performance project delivered for the class New Interfaces in Musical Expression at NYU Shanghai. The interface consisted of a line-up of 6 capacitive sensors built with soft ciruit tape on top of a curtain. Sounds were triggered via Arduino and Processing. ",
     "description_html": 'An electronic musical performance project delivered for the class New Interfaces in Musical Expression at NYU Shanghai. The interface consisted of a line-up of 6 capacitive sensors built with soft ciruit tape on top of a curtain. Sounds were triggered via Arduino and Processing. <iframe width="560" height="315" src="https://www.youtube.com/embed/gjUY0nfgeec?si=klLIGncoGiZmPl0J" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> ',
-    "type": "play",
+    "type": ["multimodal", "play", "culture"],
     "year": "2018",
     "images": [
       "https://nbujwalvdcjefepwnyky.supabase.co/storage/v1/object/public/assets/images/nime1.jpg"

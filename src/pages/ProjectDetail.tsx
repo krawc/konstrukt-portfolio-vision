@@ -80,8 +80,12 @@ const ProjectDetail = () => {
             <h1 className="text-5xl font-mono font-bold text-black">{project.title}</h1>
             <span className="text-lg font-mono text-gray-500">{project.year}</span>
           </div>
-          <div className="inline-block px-3 py-1 bg-gray-200 rounded-full">
-            <span className="text-sm font-mono text-gray-700">{project.type}</span>
+          <div className="flex flex-wrap gap-2">
+            {project.type.map(tag => (
+              <span key={tag} className="inline-block px-3 py-1 bg-gray-200 rounded-full text-sm font-mono text-gray-700">
+                {tag}
+              </span>
+            ))}
           </div>
         </div>
 

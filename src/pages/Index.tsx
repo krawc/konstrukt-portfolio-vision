@@ -10,12 +10,16 @@ const Index = () => {
   const caseStudies = projectsRaw.slice(0, 2);
   const otherProjects = projectsRaw.slice(2);
 
-  // Extract unique tags from other projects
-  const allTags = Array.from(new Set(otherProjects.map(project => project.type)));
-  
+  const TAG_ORDER = ["UXD", "multimodal", "culture", "play", "web"];
+
+  // Extract unique tags from other projects, sorted by defined order
+  const allTags = TAG_ORDER.filter(tag =>
+    otherProjects.some(project => project.type.includes(tag))
+  );
+
   // Filter other projects by selected tag
-  const filteredOtherProjects = selectedTag 
-    ? otherProjects.filter(project => project.type === selectedTag)
+  const filteredOtherProjects = selectedTag
+    ? otherProjects.filter(project => project.type.includes(selectedTag))
     : otherProjects;
 
   const marqueeContent = ["multimodal", "collaborative", "material", "more-than-human", "conversational", "interdepedent"];
@@ -175,10 +179,12 @@ const Index = () => {
                   <h3 className="text-lg font-mono font-bold text-black">{project.title}</h3>
                   <span className="text-xs font-mono text-gray-500">{project.year}</span>
                 </div>
-                <div className="mb-2">
-                  <span className="inline-block px-2 py-1 bg-gray-100 rounded-full text-xs font-mono text-gray-600">
-                    {project.type}
-                  </span>
+                <div className="mb-2 flex flex-wrap gap-1">
+                  {project.type.map(tag => (
+                    <span key={tag} className="inline-block px-2 py-1 bg-gray-100 rounded-full text-xs font-mono text-gray-600">
+                      {tag}
+                    </span>
+                  ))}
                 </div>
                 <p className="text-gray-600 font-sans text-sm leading-relaxed line-clamp-3">
                   {project.description}
