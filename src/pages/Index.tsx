@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Mail, ExternalLink, Github, Linkedin, Phone } from "lucide-react";
 import { projectsRaw } from "../App";
@@ -6,21 +6,36 @@ import InteractiveMarquee from "../components/InteractiveMarquee";
 
 const Index = () => {
   const [selectedTag, setSelectedTag] = useState<string | null>(null);
-  
+  const [displayedTag, setDisplayedTag] = useState<string | null>(null);
+  const [fading, setFading] = useState(false);
+
   const caseStudies = projectsRaw.slice(0, 2);
   const otherProjects = projectsRaw.slice(2);
 
   const TAG_ORDER = ["UXD", "multimodal", "culture", "play", "web"];
 
-  // Extract unique tags from other projects, sorted by defined order
   const allTags = TAG_ORDER.filter(tag =>
     otherProjects.some(project => project.type.includes(tag))
   );
 
-  // Filter other projects by selected tag
-  const filteredOtherProjects = selectedTag
-    ? otherProjects.filter(project => project.type.includes(selectedTag))
+  const visibleProjects = displayedTag
+    ? otherProjects.filter(project => project.type.includes(displayedTag))
     : otherProjects;
+
+  const handleTagClick = (tag: string | null) => {
+    if (tag === selectedTag) return;
+    setSelectedTag(tag);
+    setFading(true);
+  };
+
+  useEffect(() => {
+    if (!fading) return;
+    const t = setTimeout(() => {
+      setDisplayedTag(selectedTag);
+      setFading(false);
+    }, 200);
+    return () => clearTimeout(t);
+  }, [fading, selectedTag]);
 
   const marqueeContent = ["multimodal", "collaborative", "material", "more-than-human", "conversational", "interdepedent"];
 
@@ -135,10 +150,10 @@ const Index = () => {
           {/* Tag filter */}
           <div className="flex items-center gap-2">
             <button
-              onClick={() => setSelectedTag(null)}
+              onClick={() => handleTagClick(null)}
               className={`px-3 py-1 text-sm font-mono rounded-full transition-colors ${
-                !selectedTag 
-                  ? 'bg-black text-white' 
+                !selectedTag
+                  ? 'bg-black text-white'
                   : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
               }`}
             >
@@ -147,10 +162,10 @@ const Index = () => {
             {allTags.map((tag) => (
               <button
                 key={tag}
-                onClick={() => setSelectedTag(tag)}
+                onClick={() => handleTagClick(tag)}
                 className={`px-3 py-1 text-sm font-mono rounded-full transition-colors ${
-                  selectedTag === tag 
-                    ? 'bg-black text-white' 
+                  selectedTag === tag
+                    ? 'bg-black text-white'
                     : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
                 }`}
               >
@@ -160,12 +175,19 @@ const Index = () => {
           </div>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
-          {filteredOtherProjects.map((project) => (
-            <Link 
-              key={project.id} 
+        <div
+          className="grid md:grid-cols-3 gap-8"
+          style={{ opacity: fading ? 0 : 1, transition: 'opacity 200ms ease' }}
+        >
+          {visibleProjects.map((project, i) => (
+            <Link
+              key={project.id}
               to={`/project/${project.id}`}
               className="group block bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300"
+              style={{
+                animation: fading ? 'none' : `card-in 380ms ease both`,
+                animationDelay: fading ? '0ms' : `${i * 55}ms`,
+              }}
             >
               <div className="aspect-square overflow-hidden bg-gray-100">
                 <img
