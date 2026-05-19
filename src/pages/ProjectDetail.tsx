@@ -1,5 +1,5 @@
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import { projectsRaw } from "../App";
@@ -9,6 +9,8 @@ const ProjectDetail = () => {
   const project = projectsRaw.find(p => p.id === parseInt(id || ""));
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  useEffect(() => { window.scrollTo(0, 0); }, []);
 
   if (!project) {
     return (
@@ -64,7 +66,7 @@ const ProjectDetail = () => {
   });
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-100 via-gray-50 to-white">
+    <div className="min-h-screen bg-gradient-to-br from-gray-100 via-gray-50 to-white" style={{ animation: 'page-in 500ms ease both' }}>
       {/* Navigation */}
       <nav className="px-8 py-6 max-w-6xl mx-auto">
         <Link to="/" className="inline-flex items-center text-black font-mono hover:underline">

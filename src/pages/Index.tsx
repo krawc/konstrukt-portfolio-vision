@@ -40,7 +40,7 @@ const Index = () => {
   const marqueeContent = ["multimodal", "collaborative", "material", "more-than-human", "conversational", "interdepedent"];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-100 via-gray-50 to-white">
+    <div className="min-h-screen bg-gradient-to-br from-gray-100 via-gray-50 to-white" style={{ animation: 'page-in 500ms ease both' }}>
       {/* Header with social links */}
       <header className="px-8 py-6 max-w-6xl mx-auto flex justify-end">
         <div className="flex items-center gap-4">
