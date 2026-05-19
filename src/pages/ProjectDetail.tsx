@@ -1,5 +1,5 @@
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
 import { useParams, Link } from "react-router-dom";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
@@ -8,8 +8,13 @@ import { projectsRaw } from "../App";
 const ProjectDetail = () => {
   const { id } = useParams();
   const project = projectsRaw.find(p => p.id === parseInt(id || ""));
+
   const [lightboxOpen, setLightboxOpen] = useState(false);
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [displayedSrc, setDisplayedSrc] = useState("");
+  const [isLoadingImg, setIsLoadingImg] = useState(false);
+  const [imgFadeKey, setImgFadeKey] = useState(0);
+  const expectedIndexRef = useRef(-1);
 
   useEffect(() => { window.scrollTo(0, 0); }, []);
 
@@ -24,26 +29,40 @@ const ProjectDetail = () => {
     );
   }
 
+  const preloadNeighbors = (index: number) => {
+    [-1, 1].forEach(offset => {
+      const i = (index + offset + project.images.length) % project.images.length;
+      new Image().src = project.images[i];
+    });
+  };
+
+  const loadAndShow = (index: number) => {
+    expectedIndexRef.current = index;
+    setCurrentIndex(index);
+    setIsLoadingImg(true);
+
+    const img = new Image();
+    img.src = project.images[index];
+    const done = () => {
+      if (expectedIndexRef.current !== index) return;
+      setDisplayedSrc(project.images[index]);
+      setIsLoadingImg(false);
+      setImgFadeKey(k => k + 1);
+      preloadNeighbors(index);
+    };
+    img.onload = done;
+    img.onerror = done;
+  };
+
   const openLightbox = (index: number) => {
-    setCurrentImageIndex(index);
     setLightboxOpen(true);
+    loadAndShow(index);
   };
 
-  const closeLightbox = () => {
-    setLightboxOpen(false);
-  };
+  const closeLightbox = () => setLightboxOpen(false);
 
-  const nextImage = () => {
-    if (project.images.length > 1) {
-      setCurrentImageIndex((prev) => (prev + 1) % project.images.length);
-    }
-  };
-
-  const prevImage = () => {
-    if (project.images.length > 1) {
-      setCurrentImageIndex((prev) => (prev - 1 + project.images.length) % project.images.length);
-    }
-  };
+  const nextImage = () => loadAndShow((currentIndex + 1) % project.images.length);
+  const prevImage = () => loadAndShow((currentIndex - 1 + project.images.length) % project.images.length);
 
   useEffect(() => {
     if (!lightboxOpen) return;
@@ -54,7 +73,7 @@ const ProjectDetail = () => {
     };
     document.addEventListener('keydown', handleKeyDown);
     return () => document.removeEventListener('keydown', handleKeyDown);
-  }, [lightboxOpen]);
+  }, [lightboxOpen, currentIndex]);
 
   useEffect(() => {
     document.body.style.overflow = lightboxOpen ? 'hidden' : '';
@@ -122,39 +141,53 @@ const ProjectDetail = () => {
         </div>
       </main>
 
-      {/* Lightbox — portaled to body so CSS transforms on the page don't break position:fixed */}
       {lightboxOpen && createPortal(
         <div
-          className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-6"
+          className="fixed inset-0 bg-black/92 z-50 flex items-center justify-center p-6"
           onClick={closeLightbox}
         >
           <button
             onClick={closeLightbox}
             className="absolute top-4 right-4 text-white hover:text-gray-300 transition-colors"
           >
-            <X size={32} />
+            <X size={28} />
           </button>
 
           {project.images.length > 1 && (
             <button
               onClick={(e) => { e.stopPropagation(); prevImage(); }}
-              className="absolute left-4 top-1/2 -translate-y-1/2 text-white hover:text-gray-300 transition-colors"
+              className="absolute left-4 top-1/2 -translate-y-1/2 text-white hover:text-gray-300 transition-colors z-10"
             >
               <ChevronLeft size={48} />
             </button>
           )}
 
-          <img
-            src={project.images[currentImageIndex]}
-            alt={`${project.title} - ${currentImageIndex + 1}`}
-            className="max-w-full max-h-full object-contain"
-            onClick={(e) => e.stopPropagation()}
-          />
+          {/* Image + spinner share the same space */}
+          <div className="relative flex items-center justify-center" onClick={(e) => e.stopPropagation()}>
+            {displayedSrc && (
+              <img
+                key={imgFadeKey}
+                src={displayedSrc}
+                alt={`${project.title} - ${currentIndex + 1}`}
+                className="object-contain"
+                style={{
+                  maxWidth: '85vw',
+                  maxHeight: '85vh',
+                  animation: 'fade-in 300ms ease both',
+                }}
+              />
+            )}
+            {isLoadingImg && (
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="w-8 h-8 border-2 border-white border-t-transparent rounded-full animate-spin" />
+              </div>
+            )}
+          </div>
 
           {project.images.length > 1 && (
             <button
               onClick={(e) => { e.stopPropagation(); nextImage(); }}
-              className="absolute right-4 top-1/2 -translate-y-1/2 text-white hover:text-gray-300 transition-colors"
+              className="absolute right-4 top-1/2 -translate-y-1/2 text-white hover:text-gray-300 transition-colors z-10"
             >
               <ChevronRight size={48} />
             </button>
@@ -162,7 +195,7 @@ const ProjectDetail = () => {
 
           {project.images.length > 1 && (
             <div className="absolute bottom-4 left-1/2 -translate-x-1/2 text-white font-mono text-sm">
-              {currentImageIndex + 1} / {project.images.length}
+              {currentIndex + 1} / {project.images.length}
             </div>
           )}
         </div>,
