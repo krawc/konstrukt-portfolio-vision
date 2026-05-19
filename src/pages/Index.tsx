@@ -83,33 +83,34 @@ const Index = () => {
         </div>
       </section>
 
-      {/* ── Featured slider ── */}
-      <section className="py-8">
-        <div
-          className="flex gap-5 overflow-x-auto hide-scrollbar"
-          style={{ scrollSnapType: 'x mandatory', paddingLeft: '2rem', paddingRight: '2rem' }}
-        >
+      {/* ── Featured Work ── */}
+      <section className="px-8 py-16 max-w-6xl mx-auto">
+        <h2 className="text-4xl font-mono font-bold text-black mb-12">Featured Work</h2>
+        <div className="grid md:grid-cols-2 gap-12">
           {featured.map(project => (
             <Link
               key={project.id}
               to={`/project/${project.id}`}
-              className="relative flex-shrink-0 rounded-2xl overflow-hidden group"
-              style={{ width: '65vw', height: '68vh', scrollSnapAlign: 'start' }}
+              className="group block bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
             >
-              <img
-                src={project.images[0]}
-                alt={project.title}
-                className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/15 to-transparent" />
-              <div className="absolute bottom-0 left-0 right-0 p-8">
-                <div className="flex gap-3 mb-3">
-                  {project.type.map(tag => (
-                    <span key={tag} className="text-xs font-mono text-white/60 uppercase tracking-wider">{tag}</span>
-                  ))}
+              <div className="aspect-video overflow-hidden bg-gray-100">
+                <img
+                  src={project.images[0]}
+                  alt={project.title}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+              <div className="p-6">
+                <div className="flex items-center justify-between mb-3">
+                  <h3 className="text-2xl font-mono font-bold text-black">{project.title}</h3>
+                  <span className="text-sm font-mono text-gray-500">{project.year}</span>
                 </div>
-                <h3 className="text-3xl font-mono font-bold text-white mb-1">{project.title}</h3>
-                <p className="text-sm font-mono text-white/50">{project.year}</p>
+                <p className="text-gray-700 font-sans leading-relaxed line-clamp-4">
+                  {project.description}
+                </p>
+                <div className="mt-4 inline-flex items-center text-black font-mono text-sm group-hover:translate-x-1 transition-transform duration-200">
+                  view project →
+                </div>
               </div>
             </Link>
           ))}
