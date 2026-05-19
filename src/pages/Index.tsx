@@ -4,23 +4,24 @@ import { Mail, ExternalLink, Github, Linkedin, Phone } from "lucide-react";
 import { projectsRaw } from "../App";
 import InteractiveMarquee from "../components/InteractiveMarquee";
 
-const Index = () => {
-  const [selectedTag, setSelectedTag] = useState<string | null>(null);
-  const [displayedTag, setDisplayedTag] = useState<string | null>(null);
-  const [fading, setFading] = useState(false);
+const FEATURED_IDS  = [1, 10, 12, 6];
+const EARLIER_IDS   = [7, 13, 9];
 
-  const caseStudies = projectsRaw.slice(0, 2);
-  const otherProjects = projectsRaw.slice(2);
+const Index = () => {
+  const [selectedTag, setSelectedTag]   = useState<string | null>(null);
+  const [displayedTag, setDisplayedTag] = useState<string | null>(null);
+  const [fading, setFading]             = useState(false);
+
+  const featured = FEATURED_IDS.map(id => projectsRaw.find(p => p.id === id)!).filter(Boolean);
+  const moreWork = projectsRaw.filter(p => !FEATURED_IDS.includes(p.id) && !EARLIER_IDS.includes(p.id));
+  const earlier  = EARLIER_IDS.map(id => projectsRaw.find(p => p.id === id)!).filter(Boolean);
 
   const TAG_ORDER = ["UXD", "multimodal", "culture", "play", "web"];
+  const allTags   = TAG_ORDER.filter(tag => moreWork.some(p => p.type.includes(tag)));
 
-  const allTags = TAG_ORDER.filter(tag =>
-    otherProjects.some(project => project.type.includes(tag))
-  );
-
-  const visibleProjects = displayedTag
-    ? otherProjects.filter(project => project.type.includes(displayedTag))
-    : otherProjects;
+  const visibleMore = displayedTag
+    ? moreWork.filter(p => p.type.includes(displayedTag))
+    : moreWork;
 
   const handleTagClick = (tag: string | null) => {
     if (tag === selectedTag) return;
@@ -30,10 +31,7 @@ const Index = () => {
 
   useEffect(() => {
     if (!fading) return;
-    const t = setTimeout(() => {
-      setDisplayedTag(selectedTag);
-      setFading(false);
-    }, 200);
+    const t = setTimeout(() => { setDisplayedTag(selectedTag); setFading(false); }, 200);
     return () => clearTimeout(t);
   }, [fading, selectedTag]);
 
@@ -41,38 +39,25 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-100 via-gray-50 to-white" style={{ animation: 'page-in 500ms ease both' }}>
-      {/* Header with social links */}
+
+      {/* Header */}
       <header className="px-8 py-6 max-w-6xl mx-auto flex justify-end">
         <div className="flex items-center gap-4">
-          <a 
-            href="https://github.com/krawc" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="p-2 text-gray-700 hover:text-black transition-colors"
-            aria-label="GitHub"
-          >
+          <a href="https://github.com/krawc" target="_blank" rel="noopener noreferrer"
+            className="p-2 text-gray-700 hover:text-black transition-colors" aria-label="GitHub">
             <Github size={20} />
           </a>
-          <a 
-            href="https://linkedin.com/in/konradkrawc" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="p-2 text-gray-700 hover:text-black transition-colors"
-            aria-label="LinkedIn"
-          >
+          <a href="https://linkedin.com/in/konradkrawc" target="_blank" rel="noopener noreferrer"
+            className="p-2 text-gray-700 hover:text-black transition-colors" aria-label="LinkedIn">
             <Linkedin size={20} />
           </a>
-          <a 
-            href="tel:+48453283345" 
-            className="p-2 text-gray-700 hover:text-black transition-colors"
-            aria-label="Phone"
-          >
+          <a href="tel:+48453283345" className="p-2 text-gray-700 hover:text-black transition-colors" aria-label="Phone">
             <Phone size={20} />
           </a>
         </div>
       </header>
 
-      {/* Hero Section */}
+      {/* Hero */}
       <section className="px-8 py-12 max-w-6xl mx-auto">
         <div className="mb-16">
           <h1 className="text-6xl md:text-8xl font-mono font-bold text-black leading-tight">
@@ -80,93 +65,76 @@ const Index = () => {
             <InteractiveMarquee content={marqueeContent} />
           </h1>
         </div>
-
-        {/* Introduction */}
         <div className="mb-12">
           <p className="text-xl font-sans text-gray-800 leading-relaxed max-w-3xl mb-8">
             I'm Konrad Krawczyk. I'm a UI engineer who designs, develops and studies multimodal interfaces. With 6+ years of experience in technical roles as well as training in user research, I combine skills in data, development and design to create novel ways of interacting with digital products.
           </p>
-
-          {/* Contact buttons */}
           <div className="flex gap-4">
-            <a 
-              href="mailto:konrad.krawczyk@proton.me"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-black text-white font-mono text-sm hover:bg-gray-800 transition-colors rounded-lg"
-            >
-              <Mail size={16} />
-              get in touch
+            <a href="mailto:konrad.krawczyk@proton.me"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-black text-white font-mono text-sm hover:bg-gray-800 transition-colors rounded-lg">
+              <Mail size={16} /> get in touch
             </a>
-            <a 
-              href="https://nbujwalvdcjefepwnyky.supabase.co/storage/v1/object/public/assets/docs/KK_resume_a.pdf"
+            <a href="https://nbujwalvdcjefepwnyky.supabase.co/storage/v1/object/public/assets/docs/KK_resume_a.pdf"
               target="_blank"
-              className="inline-flex items-center gap-2 px-6 py-3 border border-black text-black font-mono text-sm hover:bg-black hover:text-white transition-colors rounded-lg"
-            >
-              <ExternalLink size={16} />
-              CV
+              className="inline-flex items-center gap-2 px-6 py-3 border border-black text-black font-mono text-sm hover:bg-black hover:text-white transition-colors rounded-lg">
+              <ExternalLink size={16} /> CV
             </a>
           </div>
         </div>
       </section>
 
-      {/* Case Studies */}
-      <section className="px-8 py-16 max-w-6xl mx-auto">
-        <h2 className="text-4xl font-mono font-bold text-black mb-12">Case Studies</h2>
-        <div className="grid md:grid-cols-2 gap-12">
-          {caseStudies.map((project) => (
-            <Link 
-              key={project.id} 
+      {/* ── Featured slider ── */}
+      <section className="py-8">
+        <div
+          className="flex gap-5 overflow-x-auto hide-scrollbar"
+          style={{ scrollSnapType: 'x mandatory', paddingLeft: '2rem', paddingRight: '2rem' }}
+        >
+          {featured.map(project => (
+            <Link
+              key={project.id}
               to={`/project/${project.id}`}
-              className="group block bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+              className="relative flex-shrink-0 rounded-2xl overflow-hidden group"
+              style={{ width: '65vw', height: '68vh', scrollSnapAlign: 'start' }}
             >
-              <div className="aspect-video overflow-hidden bg-gray-100">
-                <img
-                  src={project.images[0]}
-                  alt={project.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-              </div>
-              <div className="p-6">
-                <div className="flex items-center justify-between mb-3">
-                  <h3 className="text-2xl font-mono font-bold text-black">{project.title}</h3>
-                  <span className="text-sm font-mono text-gray-500">{project.year}</span>
+              <img
+                src={project.images[0]}
+                alt={project.title}
+                className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/15 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-8">
+                <div className="flex gap-3 mb-3">
+                  {project.type.map(tag => (
+                    <span key={tag} className="text-xs font-mono text-white/60 uppercase tracking-wider">{tag}</span>
+                  ))}
                 </div>
-                <p className="text-gray-700 font-sans leading-relaxed line-clamp-4">
-                  {project.description}
-                </p>
-                <div className="mt-4 inline-flex items-center text-black font-mono text-sm group-hover:translate-x-1 transition-transform duration-200">
-                  view case study →
-                </div>
+                <h3 className="text-3xl font-mono font-bold text-white mb-1">{project.title}</h3>
+                <p className="text-sm font-mono text-white/50">{project.year}</p>
               </div>
             </Link>
           ))}
         </div>
       </section>
 
-      {/* Other Projects */}
+      {/* ── More Work ── */}
       <section className="px-8 py-16 max-w-6xl mx-auto">
         <div className="flex justify-between mb-8 flex-col gap-4 md:flex-row">
-          <h2 className="text-4xl font-mono font-bold text-black">Projects</h2>
-          
-          {/* Tag filter */}
-          <div className="flex items-center gap-2">
+          <h2 className="text-2xl font-mono font-bold text-black">More Work</h2>
+          <div className="flex items-center gap-2 flex-wrap">
             <button
               onClick={() => handleTagClick(null)}
               className={`px-3 py-1 text-sm font-mono rounded-full transition-colors ${
-                !selectedTag
-                  ? 'bg-black text-white'
-                  : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                !selectedTag ? 'bg-black text-white' : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
               }`}
             >
               all
             </button>
-            {allTags.map((tag) => (
+            {allTags.map(tag => (
               <button
                 key={tag}
                 onClick={() => handleTagClick(tag)}
                 className={`px-3 py-1 text-sm font-mono rounded-full transition-colors ${
-                  selectedTag === tag
-                    ? 'bg-black text-white'
-                    : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                  selectedTag === tag ? 'bg-black text-white' : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
                 }`}
               >
                 {tag}
@@ -176,16 +144,16 @@ const Index = () => {
         </div>
 
         <div
-          className="grid md:grid-cols-3 gap-8"
+          className="grid md:grid-cols-3 gap-6"
           style={{ opacity: fading ? 0 : 1, transition: 'opacity 200ms ease' }}
         >
-          {visibleProjects.map((project, i) => (
+          {visibleMore.map((project, i) => (
             <Link
               key={project.id}
               to={`/project/${project.id}`}
-              className="group block bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300"
+              className="group block bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300"
               style={{
-                animation: fading ? 'none' : `card-in 380ms ease both`,
+                animation: fading ? 'none' : 'card-in 380ms ease both',
                 animationDelay: fading ? '0ms' : `${i * 55}ms`,
               }}
             >
@@ -198,17 +166,17 @@ const Index = () => {
               </div>
               <div className="p-4">
                 <div className="flex items-center justify-between mb-2">
-                  <h3 className="text-lg font-mono font-bold text-black">{project.title}</h3>
-                  <span className="text-xs font-mono text-gray-500">{project.year}</span>
+                  <h3 className="text-base font-mono font-bold text-black">{project.title}</h3>
+                  <span className="text-xs font-mono text-gray-400">{project.year}</span>
                 </div>
-                <div className="mb-2 flex flex-wrap gap-1">
+                <div className="flex flex-wrap gap-1 mb-2">
                   {project.type.map(tag => (
-                    <span key={tag} className="inline-block px-2 py-1 bg-gray-100 rounded-full text-xs font-mono text-gray-600">
+                    <span key={tag} className="px-2 py-0.5 bg-gray-100 rounded-full text-xs font-mono text-gray-500">
                       {tag}
                     </span>
                   ))}
                 </div>
-                <p className="text-gray-600 font-sans text-sm leading-relaxed line-clamp-3">
+                <p className="text-gray-500 font-sans text-sm leading-relaxed line-clamp-3">
                   {project.description}
                 </p>
               </div>
@@ -217,12 +185,31 @@ const Index = () => {
         </div>
       </section>
 
+      {/* ── Earlier ── */}
+      {earlier.length > 0 && (
+        <section className="px-8 pb-16 max-w-6xl mx-auto">
+          <p className="text-xs font-mono text-gray-400 uppercase tracking-widest mb-4">Earlier</p>
+          <div className="flex gap-6 flex-wrap">
+            {earlier.map(p => (
+              <Link
+                key={p.id}
+                to={`/project/${p.id}`}
+                className="font-mono text-sm text-gray-500 hover:text-black transition-colors"
+              >
+                {p.title} <span className="text-gray-400">{p.year}</span>
+              </Link>
+            ))}
+          </div>
+        </section>
+      )}
+
       {/* Footer */}
-      <footer className="px-8 py-12 max-w-6xl mx-auto border-t border-gray-200 mt-20">
+      <footer className="px-8 py-12 max-w-6xl mx-auto border-t border-gray-200">
         <p className="text-gray-500 font-mono text-sm">
           © {new Date().getFullYear()} Konrad Krawczyk
         </p>
       </footer>
+
     </div>
   );
 };
