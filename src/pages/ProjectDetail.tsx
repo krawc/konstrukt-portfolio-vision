@@ -141,6 +141,12 @@ const ProjectDetail = () => {
         </div>
       </main>
 
+      <footer className="px-8 py-12 max-w-6xl mx-auto border-t border-gray-200 mt-20">
+        <p className="text-gray-500 font-mono text-sm">
+          © {new Date().getFullYear()} Konrad Krawczyk
+        </p>
+      </footer>
+
       {lightboxOpen && createPortal(
         <div
           className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-6"
