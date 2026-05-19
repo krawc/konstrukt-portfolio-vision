@@ -91,13 +91,13 @@ const Index = () => {
             <Link
               key={project.id}
               to={`/project/${project.id}`}
-              className="group block bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+              className="block bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300"
             >
               <div className="aspect-video overflow-hidden bg-gray-100">
                 <img
                   src={project.images[0]}
                   alt={project.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="w-full h-full object-cover"
                 />
               </div>
               <div className="p-6">
@@ -108,7 +108,7 @@ const Index = () => {
                 <p className="text-gray-700 font-sans leading-relaxed line-clamp-4">
                   {project.description}
                 </p>
-                <div className="mt-4 inline-flex items-center text-black font-mono text-sm group-hover:translate-x-1 transition-transform duration-200">
+                <div className="mt-4 inline-flex items-center text-black font-mono text-sm">
                   view project →
                 </div>
               </div>
@@ -152,7 +152,7 @@ const Index = () => {
             <Link
               key={project.id}
               to={`/project/${project.id}`}
-              className="group block bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300"
+              className="block bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300"
               style={{
                 animation: fading ? 'none' : 'card-in 380ms ease both',
                 animationDelay: fading ? '0ms' : `${i * 55}ms`,
@@ -162,7 +162,7 @@ const Index = () => {
                 <img
                   src={project.images[0]}
                   alt={project.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="w-full h-full object-cover"
                 />
               </div>
               <div className="p-4">
