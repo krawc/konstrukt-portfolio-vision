@@ -34,8 +34,8 @@ export const projectsRaw = [
       }
     ],
     "images": [
-      "https://www.dropbox.com/scl/fi/3brilbdwe0oipe1z8bkio/bmw1.png?rlkey=e6549e6fc0zo2n49wjr83dkui&st=jmyai39z&raw=1",
-      "https://www.dropbox.com/scl/fi/hdy9a9elfmeves7sz0s1c/bmw2.png?rlkey=jewl441r7glxv6nmrph2qcfm0&st=68aev8dl&raw=1"
+      "https://nbujwalvdcjefepwnyky.supabase.co/storage/v1/object/public/assets/images/bmw1.webp",
+      "https://nbujwalvdcjefepwnyky.supabase.co/storage/v1/object/public/assets/images/bmw2.webp"
     ]
   },
   {
@@ -137,8 +137,8 @@ export const projectsRaw = [
     "type": ["culture", "play"],
     "year": "2019",
     "images": [
-      "https://www.dropbox.com/scl/fi/6f5rpy3fubiaic1c50bol/ilive.jpeg?rlkey=271ovm910yrl7n8v2pyp1nxpl&st=yoha07g7&raw=1",
-      "https://www.dropbox.com/scl/fi/ntjia5khzwsybaanh7bdx/ilive2.jpeg?rlkey=5vwy5xqspgy2f1pen1btcchg6&st=c6xp31i3&raw=1"
+      "https://nbujwalvdcjefepwnyky.supabase.co/storage/v1/object/public/assets/images/ilive.jpg",
+      "https://nbujwalvdcjefepwnyky.supabase.co/storage/v1/object/public/assets/images/ilive2.jpg"
     ]
   },
   {
@@ -193,7 +193,7 @@ export const projectsRaw = [
     "type": ["multimodal", "play", "culture"],
     "year": "2018",
     "images": [
-      "https://nbujwalvdcjefepwnyky.supabase.co/storage/v1/object/public/assets/images/nime1.jpg"
+      "https://nbujwalvdcjefepwnyky.supabase.co/storage/v1/object/public/assets/images/nime3.webp"
     ]
   },
 
