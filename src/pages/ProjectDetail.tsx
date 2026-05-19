@@ -1,5 +1,6 @@
 
 import { useState, useEffect } from "react";
+import { createPortal } from "react-dom";
 import { useParams, Link } from "react-router-dom";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import { projectsRaw } from "../App";
@@ -44,26 +45,21 @@ const ProjectDetail = () => {
     }
   };
 
-  // Handle keyboard navigation
-  const handleKeyDown = (e: KeyboardEvent) => {
+  useEffect(() => {
     if (!lightboxOpen) return;
-    
-    if (e.key === 'Escape') {
-      closeLightbox();
-    } else if (e.key === 'ArrowLeft') {
-      prevImage();
-    } else if (e.key === 'ArrowRight') {
-      nextImage();
-    }
-  };
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') closeLightbox();
+      else if (e.key === 'ArrowLeft') prevImage();
+      else if (e.key === 'ArrowRight') nextImage();
+    };
+    document.addEventListener('keydown', handleKeyDown);
+    return () => document.removeEventListener('keydown', handleKeyDown);
+  }, [lightboxOpen]);
 
-  // Add keyboard event listener when lightbox opens
-  useState(() => {
-    if (lightboxOpen) {
-      document.addEventListener('keydown', handleKeyDown);
-      return () => document.removeEventListener('keydown', handleKeyDown);
-    }
-  });
+  useEffect(() => {
+    document.body.style.overflow = lightboxOpen ? 'hidden' : '';
+    return () => { document.body.style.overflow = ''; };
+  }, [lightboxOpen]);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-100 via-gray-50 to-white" style={{ animation: 'page-in 500ms ease both' }}>
@@ -126,53 +122,51 @@ const ProjectDetail = () => {
         </div>
       </main>
 
-      {/* Lightbox */}
-      {lightboxOpen && (
-        <div 
-          className="fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center p-4"
+      {/* Lightbox — portaled to body so CSS transforms on the page don't break position:fixed */}
+      {lightboxOpen && createPortal(
+        <div
+          className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-6"
           onClick={closeLightbox}
         >
-          <div className="relative max-w-5xl max-h-full" onClick={(e) => e.stopPropagation()}>
-            <img
-              src={project.images[currentImageIndex]}
-              alt={`${project.title} - Image ${currentImageIndex + 1}`}
-              className="max-w-full max-h-full object-contain"
-            />
-            
-            {/* Close button */}
+          <button
+            onClick={closeLightbox}
+            className="absolute top-4 right-4 text-white hover:text-gray-300 transition-colors"
+          >
+            <X size={32} />
+          </button>
+
+          {project.images.length > 1 && (
             <button
-              onClick={closeLightbox}
-              className="absolute top-4 right-4 text-white hover:text-gray-300 transition-colors z-10"
+              onClick={(e) => { e.stopPropagation(); prevImage(); }}
+              className="absolute left-4 top-1/2 -translate-y-1/2 text-white hover:text-gray-300 transition-colors"
             >
-              <X size={32} />
+              <ChevronLeft size={48} />
             </button>
+          )}
 
-            {/* Navigation buttons - only show if more than one image */}
-            {project.images.length > 1 && (
-              <>
-                <button
-                  onClick={prevImage}
-                  className="absolute left-4 top-1/2 transform -translate-y-1/2 text-white hover:text-gray-300 transition-colors z-10"
-                >
-                  <ChevronLeft size={48} />
-                </button>
-                <button
-                  onClick={nextImage}
-                  className="absolute right-4 top-1/2 transform -translate-y-1/2 text-white hover:text-gray-300 transition-colors z-10"
-                >
-                  <ChevronRight size={48} />
-                </button>
-              </>
-            )}
+          <img
+            src={project.images[currentImageIndex]}
+            alt={`${project.title} - ${currentImageIndex + 1}`}
+            className="max-w-full max-h-full object-contain"
+            onClick={(e) => e.stopPropagation()}
+          />
 
-            {/* Image counter - only show if more than one image */}
-            {project.images.length > 1 && (
-              <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-white font-mono text-sm">
-                {currentImageIndex + 1} / {project.images.length}
-              </div>
-            )}
-          </div>
-        </div>
+          {project.images.length > 1 && (
+            <button
+              onClick={(e) => { e.stopPropagation(); nextImage(); }}
+              className="absolute right-4 top-1/2 -translate-y-1/2 text-white hover:text-gray-300 transition-colors"
+            >
+              <ChevronRight size={48} />
+            </button>
+          )}
+
+          {project.images.length > 1 && (
+            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 text-white font-mono text-sm">
+              {currentImageIndex + 1} / {project.images.length}
+            </div>
+          )}
+        </div>,
+        document.body
       )}
     </div>
   );
