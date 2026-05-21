@@ -4,7 +4,7 @@ import { Mail, ExternalLink, Github, Linkedin, Phone } from "lucide-react";
 import { projectsRaw } from "../App";
 import InteractiveMarquee from "../components/InteractiveMarquee";
 
-const FEATURED_IDS  = [1, 10, 12, 6];
+const FEATURED_IDS  = [1, 10, 2, 6];
 const EARLIER_IDS   = [7, 13, 9];
 
 const Index = () => {

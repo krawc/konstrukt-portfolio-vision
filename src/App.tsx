@@ -76,12 +76,12 @@ export const projectsRaw = [
     "id": 2,
     "title": "bits & pieces",
     "description": "This product was developed to help visitors of Kunstmuseum Den Haag find meaning in abstract art. It consists of cue cards, packaged in a stylish paper box with a black ribbon handle, designed to guide users through the phases 'See,' 'Think,' and 'Feel' to deepen their understanding of artwork. The cards are made from durable materials and feature a minimalistic, abstract aesthetic.",
+    "description_html": `This product was developed to help visitors of Kunstmuseum Den Haag find meaning in abstract art. It consists of cue cards, packaged in a stylish paper box with a black ribbon handle, designed to guide users through the phases 'See,' 'Think,' and 'Feel' to deepen their understanding of artwork. The cards are made from durable materials and feature a minimalistic, abstract aesthetic.<br/><br/><iframe width="100%" height="400" src="https://www.youtube.com/embed/0QB1Xziv31E" title="bits & pieces" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`,
     "type": ["culture", "play"],
     "year": "2022",
     "images": [
       "https://nbujwalvdcjefepwnyky.supabase.co/storage/v1/object/public/assets/images/bits1.jpg",
-      "https://nbujwalvdcjefepwnyky.supabase.co/storage/v1/object/public/assets/images/bits2.jpg",
-      "https://www.dropbox.com/scl/fi/wb378yvi3djhn6f418lg9/bits3.png?rlkey=ptqju1gcwqyffv9ngzoletjwm&st=bfoddkyp&raw=1"
+      "https://nbujwalvdcjefepwnyky.supabase.co/storage/v1/object/public/assets/images/bits2.jpg"
     ]
   },
   {
