@@ -1,6 +1,6 @@
 import { MessageCircle, MapPin } from "lucide-react";
 
-const WHATSAPP_NUMBER = "+48733671997"; // placeholder — update with real WhatsApp number
+const WHATSAPP_NUMBER = "+48733671997"; // placeholder – update with real WhatsApp number
 const ADDRESS_LINES = [
   "Rückerstraße 8", // placeholder
   "10119 Berlin", // placeholder
@@ -30,17 +30,17 @@ const Tutoring = () => {
           <div className="space-y-6 font-sans text-lg text-gray-800 leading-relaxed">
             <h2 className="text-3xl font-mono font-bold text-black mb-8">Who I am</h2>
             <p>
-              I'm an industrial designer by training and currently work as an adjunct
+              I'm an <strong>industrial designer</strong> by training and currently work as an adjunct
               lecturer of UX/UI Design and Web Development at the University of Europe
               in Potsdam.
             </p>
             <p>
-              I hold degrees from New York University (Interactive Media Arts) and TU
-              Delft (Industrial Design), both awarded cum laude.
+              I hold degrees from <strong>New York University</strong> (Interactive Media Arts) and <strong>TU
+              Delft</strong> (Industrial Design), both awarded cum laude.
             </p>
             <p>
-              Before any of that, I was an IB Diploma student myself — one who came out
-              the other side with 41 out of 45 points, funded by a scholarship at a
+              Before any of that, I was an IB Diploma student myself – one who came out
+              the other side with <strong>41 out of 45 points</strong>, funded by a scholarship at a
               public school in Warsaw, Poland. I know exactly what the program demands,
               because I lived it.
             </p>
@@ -82,7 +82,7 @@ const Tutoring = () => {
             </h3>
             <p className="font-sans text-lg text-gray-800 leading-relaxed">
               Structuring an argument, narrowing a research question, and writing to an
-              academic standard are skills I use daily — I've supervised and contributed
+              academic standard are skills I use daily – I've supervised and contributed
               to multiple dissertations and published research. I help students bring
               that same rigor to their EE, from topic selection through final draft.
             </p>
@@ -110,17 +110,17 @@ const Tutoring = () => {
           <p>
             The IB Diploma is one of the most rigorous secondary programs out there, and
             it demands real perseverance. Students often feel buried under the sheer
-            volume of material — that's normal, and it doesn't mean something's wrong.
+            volume of material – that's normal, and it doesn't mean something's wrong.
           </p>
           <p>
-            What the program rewards isn't cramming — it's diligent planning paired with
+            What the program rewards isn't cramming – it's diligent planning paired with
             a steady, progress-oriented attitude. It doesn't hand out participation
             trophies, and the payoff isn't always immediate. But few programs prepare
             young people as well to study, work, and think across cultures.
           </p>
           <p>
             I consider it one of the most formative experiences of my own education, and
-            I bring that perspective — not just subject knowledge — into every session.
+            I bring that perspective – not just subject knowledge – into every session.
           </p>
         </div>
       </section>
