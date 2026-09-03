@@ -1,12 +1,12 @@
 import { MessageCircle, MapPin } from "lucide-react";
 
-const WHATSAPP_NUMBER = "48453283345"; // placeholder — update with real WhatsApp number
+const WHATSAPP_NUMBER = "+48733671997"; // placeholder — update with real WhatsApp number
 const ADDRESS_LINES = [
-  "Address line 1", // placeholder
-  "Address line 2", // placeholder
-  "City, Country",  // placeholder
+  "Rückerstraße 8", // placeholder
+  "10119 Berlin", // placeholder
+  "Next to Berlin Cosmopolitan School",  // placeholder
 ];
-const MAP_EMBED_SRC = "https://www.google.com/maps?q=Warsaw,Poland&output=embed"; // placeholder location
+const MAP_EMBED_SRC = "https://www.google.com/maps?q=Rueckerstrasse+8+10119+berlin&output=embed"; // placeholder location
 
 const Tutoring = () => {
   return (
@@ -23,9 +23,12 @@ const Tutoring = () => {
 
       {/* Who I am */}
       <section className="px-8 py-16 max-w-4xl mx-auto border-t border-gray-200">
-        <h2 className="text-3xl font-mono font-bold text-black mb-8">Who I am</h2>
-        <div className="grid md:grid-cols-[1fr_320px] gap-10 items-start">
+        <div className="grid md:grid-cols-[320px_1fr] gap-10 items-start">
+          <div className="aspect-[4/5] w-full bg-gray-200 rounded-lg flex items-center justify-center text-gray-400 font-mono text-sm">
+            <img src="https://nbujwalvdcjefepwnyky.supabase.co/storage/v1/object/public/assets/images/portrait.webp"/>
+          </div>
           <div className="space-y-6 font-sans text-lg text-gray-800 leading-relaxed">
+            <h2 className="text-3xl font-mono font-bold text-black mb-8">Who I am</h2>
             <p>
               I'm an industrial designer by training and currently work as an adjunct
               lecturer of UX/UI Design and Web Development at the University of Europe
@@ -41,9 +44,6 @@ const Tutoring = () => {
               public school in Warsaw, Poland. I know exactly what the program demands,
               because I lived it.
             </p>
-          </div>
-          <div className="aspect-[4/5] w-full bg-gray-200 rounded-lg flex items-center justify-center text-gray-400 font-mono text-sm">
-            photo placeholder
           </div>
         </div>
       </section>
